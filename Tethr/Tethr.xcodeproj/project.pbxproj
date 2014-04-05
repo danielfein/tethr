@@ -21,6 +21,8 @@
 		AD25890E18F0991C00510D9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588F018F0991C00510D9D /* UIKit.framework */; };
 		AD25891618F0991C00510D9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD25891418F0991C00510D9D /* InfoPlist.strings */; };
 		AD25891818F0991C00510D9D /* TethrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25891718F0991C00510D9D /* TethrTests.m */; };
+		AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25892518F09B2900510D9D /* ActivityTableViewController.m */; };
+		AD25892918F0A11300510D9D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25892818F0A11300510D9D /* Activity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		AD25891318F0991C00510D9D /* TethrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TethrTests-Info.plist"; sourceTree = "<group>"; };
 		AD25891518F0991C00510D9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD25891718F0991C00510D9D /* TethrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TethrTests.m; sourceTree = "<group>"; };
+		AD25892418F09B2900510D9D /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTableViewController.h; path = ../ActivityTableViewController.h; sourceTree = "<group>"; };
+		AD25892518F09B2900510D9D /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewController.m; path = ../ActivityTableViewController.m; sourceTree = "<group>"; };
+		AD25892718F0A11300510D9D /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		AD25892818F0A11300510D9D /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +118,13 @@
 		AD2588F218F0991C00510D9D /* Tethr */ = {
 			isa = PBXGroup;
 			children = (
+				AD25892418F09B2900510D9D /* ActivityTableViewController.h */,
+				AD25892518F09B2900510D9D /* ActivityTableViewController.m */,
 				AD2588FB18F0991C00510D9D /* AppDelegate.h */,
 				AD2588FC18F0991C00510D9D /* AppDelegate.m */,
 				AD2588FE18F0991C00510D9D /* Main.storyboard */,
+				AD25892718F0A11300510D9D /* Activity.h */,
+				AD25892818F0A11300510D9D /* Activity.m */,
 				AD25890118F0991C00510D9D /* ViewController.h */,
 				AD25890218F0991C00510D9D /* ViewController.m */,
 				AD25890418F0991C00510D9D /* Images.xcassets */,
@@ -249,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD25892918F0A11300510D9D /* Activity.m in Sources */,
+				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
 				AD25890318F0991C00510D9D /* ViewController.m in Sources */,
 				AD2588FD18F0991C00510D9D /* AppDelegate.m in Sources */,
 				AD2588F918F0991C00510D9D /* main.m in Sources */,
@@ -379,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
 				INFOPLIST_FILE = "Tethr/Tethr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
 				INFOPLIST_FILE = "Tethr/Tethr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +470,7 @@
 				AD25891D18F0991C00510D9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD25891E18F0991C00510D9D /* Build configuration list for PBXNativeTarget "TethrTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +479,7 @@
 				AD25892018F0991C00510D9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
