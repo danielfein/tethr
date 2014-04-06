@@ -11,6 +11,8 @@
 @interface Activity : NSObject
 
 @property (nonatomic, copy) NSString* name;
+@property (nonatomic, copy) NSString* venue;
 @property (nonatomic) NSInteger count;
-
+@property (nonatomic) NSInteger user_id;
+-(id) initWithDictionary: (NSDictionary* ) dictionary;
 @end

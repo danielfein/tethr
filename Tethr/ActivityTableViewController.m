@@ -8,10 +8,13 @@
 
 #import "ActivityTableViewController.h"
 #import "Activity.h"
+#import "BZFoursquare.h"
+#import "BZFoursquareRequest.h"
 
-@interface ActivityTableViewController ()
-
-@end
+@interface ActivityTableViewController (){
+    NSMutableData *_responseData;
+}
+    @end
 
 @implementation ActivityTableViewController
 
@@ -28,20 +31,25 @@
 {
     [super viewDidLoad];
     self.dummyArray = [[NSMutableArray alloc] init];
-    Activity *dummyActivity = [[Activity alloc] init];
-    dummyActivity.name = @"Tennis";
-    dummyActivity.count = 10;
-    [self.dummyArray addObject:dummyActivity];
+//    Activity *dummyActivity = [[Activity alloc] init];
+//    dummyActivity.name = @"Tennis";
+//    dummyActivity.count = 10;
+//    [self.dummyArray addObject:dummyActivity];
+//    
+//    dummyActivity = [[Activity alloc] init];
+//    dummyActivity.name = @"Museums";
+//    dummyActivity.count = 123;
+//    [self.dummyArray addObject:dummyActivity];
+//    
+//    dummyActivity = [[Activity alloc] init];
+//    dummyActivity.name = @"Dinner";
+//    dummyActivity.count = 7;
+//    [self.dummyArray addObject:dummyActivity];
+    // Create the request.
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://108.166.79.24/tethr/get_all_activities"]];
     
-    dummyActivity = [[Activity alloc] init];
-    dummyActivity.name = @"Museums";
-    dummyActivity.count = 123;
-    [self.dummyArray addObject:dummyActivity];
-    
-    dummyActivity = [[Activity alloc] init];
-    dummyActivity.name = @"Dinner";
-    dummyActivity.count = 7;
-    [self.dummyArray addObject:dummyActivity];
+    // Create url connection and fire request
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     NSArray *sortedArray = [self.dummyArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b){
         NSInteger first = [(Activity * ) a count];
@@ -88,6 +96,65 @@
     Activity *selectedActivity = [self.dummyArray objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"gotoMap" sender:nil];
 }
+
+#pragma mark NSURLConnection Delegate Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    // A response has been received, this is where we initialize the instance var you created
+    // so that we can append data to it in the didReceiveData method
+    // Furthermore, this method is called each time there is a redirect so reinitializing it
+    // also serves to clear it
+    _responseData = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    // Append the new data to the instance variable you declared
+    [_responseData appendData:data];
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
+    // Return nil to indicate not necessary to store a cached response for this connection
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // The request is complete and data has been received
+    // You can parse the stuff in your instance variable now
+    // NSLog(@"Data is %@", [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding ]);
+    NSDictionary *activities = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingAllowFragments error:nil];
+//
+    NSArray *allActivities = [activities objectForKey:@"activities"];
+    for (NSDictionary *dictionary in allActivities) {
+        Activity *tempActivity = [[Activity alloc] initWithDictionary:dictionary];
+        
+        if([self getDuplicateActivity:tempActivity]){
+            Activity *existingActivity = [self getDuplicateActivity:tempActivity];
+            existingActivity.count += 1;
+        }else{
+            [self.dummyArray addObject:tempActivity];
+        }
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // The request has failed for some reason!
+    // Check the error var
+}
+
+-(Activity*)getDuplicateActivity:(Activity*)activity{
+    for(Activity *iteratorActivity in self.dummyArray){
+        if([iteratorActivity.name isEqualToString:activity.name]){
+            return iteratorActivity;
+        }
+    }
+    return nil;
+}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
