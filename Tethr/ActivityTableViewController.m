@@ -27,6 +27,14 @@
     return self;
 }
 
+
+- (void) viewDidAppear:(BOOL)animated{
+    
+    [self performSegueWithIdentifier:@"gotoMap" sender:nil];
+    
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

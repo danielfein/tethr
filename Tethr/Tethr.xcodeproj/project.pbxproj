@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
+		2693AD7018FAD8DE006B7C89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD6F18FAD8DE006B7C89 /* MapKit.framework */; };
+		2693AD7218FADD2B006B7C89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD7118FADD2B006B7C89 /* CoreLocation.framework */; };
 		AD2588ED18F0991C00510D9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EC18F0991C00510D9D /* Foundation.framework */; };
 		AD2588EF18F0991C00510D9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EE18F0991C00510D9D /* CoreGraphics.framework */; };
 		AD2588F118F0991C00510D9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588F018F0991C00510D9D /* UIKit.framework */; };
@@ -57,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2693AD6C18FAD84C006B7C89 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		2693AD6D18FAD84C006B7C89 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		2693AD6F18FAD8DE006B7C89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2693AD7118FADD2B006B7C89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AD2588E918F0991C00510D9D /* Tethr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tethr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2588EC18F0991C00510D9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD2588EE18F0991C00510D9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2693AD7218FADD2B006B7C89 /* CoreLocation.framework in Frameworks */,
+				2693AD7018FAD8DE006B7C89 /* MapKit.framework in Frameworks */,
 				AD25893718F19E6000510D9D /* MobileCoreServices.framework in Frameworks */,
 				AD2588EF18F0991C00510D9D /* CoreGraphics.framework in Frameworks */,
 				AD2588F118F0991C00510D9D /* UIKit.framework in Frameworks */,
@@ -172,6 +181,8 @@
 		AD2588EB18F0991C00510D9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2693AD7118FADD2B006B7C89 /* CoreLocation.framework */,
+				2693AD6F18FAD8DE006B7C89 /* MapKit.framework */,
 				AD25893618F19E6000510D9D /* MobileCoreServices.framework */,
 				AD2588EC18F0991C00510D9D /* Foundation.framework */,
 				AD2588EE18F0991C00510D9D /* CoreGraphics.framework */,
@@ -201,6 +212,8 @@
 				AD2588FB18F0991C00510D9D /* AppDelegate.h */,
 				AD2588FC18F0991C00510D9D /* AppDelegate.m */,
 				AD2588FE18F0991C00510D9D /* Main.storyboard */,
+				2693AD6C18FAD84C006B7C89 /* MapViewController.h */,
+				2693AD6D18FAD84C006B7C89 /* MapViewController.m */,
 				AD25892718F0A11300510D9D /* Activity.h */,
 				AD25892818F0A11300510D9D /* Activity.m */,
 				AD25890118F0991C00510D9D /* ViewController.h */,
@@ -388,6 +401,7 @@
 				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
 				AD25896818F1AF2F00510D9D /* SDWebImagePrefetcher.m in Sources */,
 				AD25896718F1AF2F00510D9D /* SDWebImageManager.m in Sources */,
+				2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */,
 				AD25890318F0991C00510D9D /* ViewController.m in Sources */,
 				AD2588FD18F0991C00510D9D /* AppDelegate.m in Sources */,
 				AD25896318F1AF2F00510D9D /* SDWebImageCompat.m in Sources */,
@@ -534,7 +548,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
 				INFOPLIST_FILE = "Tethr/Tethr-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -549,7 +563,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
 				INFOPLIST_FILE = "Tethr/Tethr-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

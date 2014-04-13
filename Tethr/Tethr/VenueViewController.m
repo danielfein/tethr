@@ -5,6 +5,7 @@
 #import "VenueSearchOperation.h"
 #import "Model.h"
 #import "UIImageView+WebCache.h"
+#import "MapViewController.h"
 
 @interface VenueViewController ()
 
@@ -70,6 +71,24 @@
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+     Venue *venue = self.model.venues[indexPath.row];
+    [self performSegueWithIdentifier:@"goToMapView" sender:venue];
+    
+}
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    MapViewController *vc= [segue destinationViewController];
+    Venue *selectedVenue= (Venue*)sender;
+    vc.latitude= selectedVenue.lat;
+    vc.longitude= selectedVenue.longitude;
+    
+}
+
 
 
 @end

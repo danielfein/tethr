@@ -29,9 +29,9 @@
 
 /// Timestamp that we last successfully retrieved the Venue
 @property (nonatomic, strong) NSDate   *timestamp;
-@property (nonatomic, strong) NSNumber   *lat;
-@property (nonatomic, strong) NSNumber   *longitude;
-@property (nonatomic, strong) NSNumber   *distance;
+@property (nonatomic, assign) double   lat;
+@property (nonatomic, assign) double   longitude;
+@property (nonatomic, assign) double   distance;
 -(id) initWithDictioanry: (NSDictionary*) dictionary;
 
 @end

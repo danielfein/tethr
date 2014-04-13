@@ -81,9 +81,9 @@
     if (self) {
         self.venueName = [dictionary objectForKey:@"name"];
          self.venueId = [dictionary objectForKey:@"id"];
-         self.lat = [[dictionary objectForKey:@"location"] objectForKey:@"lat"];
-         self.longitude = [[dictionary objectForKey:@"location"] objectForKey:@"lng"];
-         self.distance = [[dictionary objectForKey:@"location"] objectForKey:@"distance"];
+         self.lat = [[[dictionary objectForKey:@"location"] objectForKey:@"lat"] doubleValue];
+         self.longitude = [[[dictionary objectForKey:@"location"] objectForKey:@"lng"] doubleValue];
+         self.distance = [[[dictionary objectForKey:@"location"] objectForKey:@"distance"] doubleValue];
     }
     return self;
 

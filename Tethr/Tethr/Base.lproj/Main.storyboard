@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aE0-YV-63j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aE0-YV-63j">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Activity Table View Controller - ACTIVITIES-->
@@ -77,10 +77,41 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="vwL-zt-CcS"/>
+                    <connections>
+                        <segue destination="rmF-zI-jZ9" kind="push" identifier="goToMapView" id="Tjj-iz-KlL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNW-hU-Ov8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="103"/>
+            <point key="canvasLocation" x="897" y="99"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="mY3-Le-Q7n">
+            <objects>
+                <viewController id="rmF-zI-jZ9" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ez-bR-MC1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ywj-vB-QbK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="isa-bt-523">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pik-c7-UCX">
+                                <rect key="frame" x="-6" y="64" width="331" height="509"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FTf-u2-hvV"/>
+                    <connections>
+                        <outlet property="mapView" destination="Pik-c7-UCX" id="kXf-E9-LqI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUZ-IW-mpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="01B-n7-Sp5">
