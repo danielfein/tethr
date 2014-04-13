@@ -1,13 +1,9 @@
 
-#import "VenueSearchOperation.h"
-#import "Venue.h"
+#import "GetUsersOperation.h"
+#import "User.h"
 
-static const NSString *c_host_name = @"https://api.foursquare.com/v2/";
-static const NSString *c_client_id = @"XZTV2M5BY32M0VISEBZZA3TIPDMHCLFAKP2OR0WB3AY4AO1P";
-static const NSString *c_client_secret = @"5XIZJB025B4OFNAWDWBHX5MGPOZFKOOVUDAOXFVTEK5PY1OO";
-static const NSString *c_version = @"20131016";
 
-@interface VenueSearchOperation () <NSURLConnectionDataDelegate>
+@interface GetUsersOperation () <NSURLConnectionDataDelegate>
 
 @property (nonatomic, getter = isFinished)  BOOL finished;
 @property (nonatomic, getter = isExecuting) BOOL executing;
@@ -15,18 +11,21 @@ static const NSString *c_version = @"20131016";
 @property (nonatomic, weak) NSURLConnection *connection;
 @property (nonatomic, strong) NSMutableData *data;
 @property (nonatomic, strong) NSString *parseString;
-@property (nonatomic, retain) NSString *activity;
+@property (nonatomic, retain) NSString *Activity;
+@property (nonatomic, retain) NSString *VenueDescription;
+
 @end
 
-@implementation VenueSearchOperation
+@implementation GetUsersOperation
 
-- (id)initWithActivity:(NSString *) activityDescription Completion:(VenueRequestCompletion)requestCompletion
+- (id)initWithActivity:(NSString *)activityDescription andVenue:(NSString *)venueDescription andCompletion:(UserRequestCompletion)requestCompletion
 {
     self = [super init];
     if (self) {
-        self.AllVenues = [[NSMutableArray alloc] init];
+        self.AllUsers = [[NSMutableArray alloc] init];
+        self.Activity = activityDescription;
+        self.VenueDescription = venueDescription;
         self.requestCompletion = requestCompletion;
-        self.activity = activityDescription;
     }
     return self;
 }
@@ -41,8 +40,7 @@ static const NSString *c_version = @"20131016";
     
     self.executing = YES;
     
-    NSString *urlString = [NSString stringWithFormat:@"%@venues/search?ll=40.7,-74&query=%@&client_id=%@&client_secret=%@&v=%@",
-                           c_host_name,self.activity,c_client_id,c_client_secret,c_version];
+    NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/get_activity/%@/%@",self.Activity,self.VenueDescription];
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -99,15 +97,15 @@ static const NSString *c_version = @"20131016";
     
     NSAssert(![NSJSONSerialization isValidJSONObject:self.data], @"%s: Invalid JSON recieved from server", __FUNCTION__);
     
-    NSArray *venueDetails = [NSJSONSerialization JSONObjectWithData:self.data
+    NSDictionary *userDetails = [NSJSONSerialization JSONObjectWithData:self.data
                                                                  options:NSJSONReadingMutableContainers
-                                                                   error:&error][@"response"][@"venues"];
+                                                                   error:&error];
     
     NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
     
-    for(NSDictionary *tempDictionary in venueDetails){
-        Venue *tempVenue = [[Venue alloc] initWithDictioanry:tempDictionary];
-        [self.AllVenues addObject:tempVenue];
+    for(NSArray *tempDictionary in [userDetails objectForKey:@"users"]){
+        User *tempUser = [[User alloc] initWithDictionary:[tempDictionary objectAtIndex:0]];
+        [self.AllUsers addObject:tempUser];
     }
     
     if (!error)
@@ -115,7 +113,7 @@ static const NSString *c_version = @"20131016";
         if (self.requestCompletion)
         {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.requestCompletion(self.AllVenues, nil);
+                self.requestCompletion(self.AllUsers, nil);
             }];
         }
     };

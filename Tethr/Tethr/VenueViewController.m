@@ -23,7 +23,8 @@
     
     
     
-    VenueSearchOperation *operation = [[VenueSearchOperation alloc] initWithCompletion:^(NSArray *allVenues,NSError *error){
+    VenueSearchOperation *operation = [[VenueSearchOperation alloc] initWithActivity:self.activity.name Completion:^(NSArray *allVenues,NSError *error){
+        
         self.model.venues = [allVenues mutableCopy];
         [self.tableView reloadData];
     }];
@@ -75,20 +76,27 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
      Venue *venue = self.model.venues[indexPath.row];
-    [self performSegueWithIdentifier:@"goToMapView" sender:venue];
+    [self performSegueWithIdentifier:@"toUsers" sender:venue];
     
 }
-
-
+//
+//
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    MapViewController *vc= [segue destinationViewController];
-    Venue *selectedVenue= (Venue*)sender;
-    vc.latitude= selectedVenue.lat;
-    vc.longitude= selectedVenue.longitude;
-    
-}
+    UIViewController *vc= [segue destinationViewController];
+    if([vc isKindOfClass:[MapViewController class]]){
+        
+        Venue *selectedVenue= (Venue*)sender;
+        ((MapViewController*)vc).latitude= selectedVenue.lat;
+        ((MapViewController*)vc).longitude= selectedVenue.longitude;
 
+    }else{
+        /*
+         Continue from here, sending venue and activity
+         */
+    }
+}
+//
 
 
 @end

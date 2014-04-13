@@ -7,6 +7,8 @@
 //
 
 #import "ActivityTableViewController.h"
+
+#import "VenueViewController.h"
 #import "Activity.h"
 #import "BZFoursquare.h"
 #import "BZFoursquareRequest.h"
@@ -25,14 +27,6 @@
         // Custom initialization
     }
     return self;
-}
-
-
-- (void) viewDidAppear:(BOOL)animated{
-    
-    [self performSegueWithIdentifier:@"gotoMap" sender:nil];
-    
-    
 }
 
 - (void)viewDidLoad
@@ -102,7 +96,12 @@
 }
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Activity *selectedActivity = [self.dummyArray objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"gotoMap" sender:nil];
+    [self performSegueWithIdentifier:@"gotoMap" sender:selectedActivity];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    VenueViewController *vc = [segue destinationViewController];
+    vc.activity = (Activity *) sender;
 }
 
 #pragma mark NSURLConnection Delegate Methods

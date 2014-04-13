@@ -47,6 +47,9 @@
 		AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25895F18F1AF2F00510D9D /* UIImageView+WebCache.m */; };
 		AD25897018F1AFAB00510D9D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25896E18F1AFAB00510D9D /* Model.m */; };
 		AD25897318F1B23100510D9D /* VenueSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25897218F1B23100510D9D /* VenueSearchOperation.m */; };
+		AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */; };
+		AD915F4B18FAE9EE00B8B12E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4A18FAE9EE00B8B12E /* User.m */; };
+		ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +132,12 @@
 		AD25896F18F1AFAB00510D9D /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		AD25897118F1B23100510D9D /* VenueSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueSearchOperation.h; sourceTree = "<group>"; };
 		AD25897218F1B23100510D9D /* VenueSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueSearchOperation.m; sourceTree = "<group>"; };
+		AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUsersOperation.m; sourceTree = "<group>"; };
+		AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUsersOperation.h; sourceTree = "<group>"; };
+		AD915F4918FAE9EE00B8B12E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		AD915F4A18FAE9EE00B8B12E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
+		ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +204,12 @@
 		AD2588F218F0991C00510D9D /* Tethr */ = {
 			isa = PBXGroup;
 			children = (
+				AD915F4918FAE9EE00B8B12E /* User.h */,
+				AD915F4A18FAE9EE00B8B12E /* User.m */,
+				ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */,
+				ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */,
+				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
+				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
 				AD25893018F19E4500510D9D /* BZFoursquare.h */,
 				AD25893118F19E4500510D9D /* BZFoursquare.m */,
 				AD25893218F19E4500510D9D /* BZFoursquareRequest.h */,
@@ -397,12 +412,14 @@
 				AD25892918F0A11300510D9D /* Activity.m in Sources */,
 				AD25897318F1B23100510D9D /* VenueSearchOperation.m in Sources */,
 				AD25896018F1AF2F00510D9D /* MKAnnotationView+WebCache.m in Sources */,
+				AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */,
 				AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */,
 				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
 				AD25896818F1AF2F00510D9D /* SDWebImagePrefetcher.m in Sources */,
 				AD25896718F1AF2F00510D9D /* SDWebImageManager.m in Sources */,
 				2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */,
 				AD25890318F0991C00510D9D /* ViewController.m in Sources */,
+				ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */,
 				AD2588FD18F0991C00510D9D /* AppDelegate.m in Sources */,
 				AD25896318F1AF2F00510D9D /* SDWebImageCompat.m in Sources */,
 				AD25897018F1AFAB00510D9D /* Model.m in Sources */,
@@ -417,6 +434,7 @@
 				AD25896118F1AF2F00510D9D /* NSData+GIF.m in Sources */,
 				AD25893518F19E4500510D9D /* BZFoursquareRequest.m in Sources */,
 				AD2588F918F0991C00510D9D /* main.m in Sources */,
+				AD915F4B18FAE9EE00B8B12E /* User.m in Sources */,
 				AD25896218F1AF2F00510D9D /* SDImageCache.m in Sources */,
 				AD25896918F1AF2F00510D9D /* UIButton+WebCache.m in Sources */,
 				AD25894018F1AEFE00510D9D /* VenueViewController.m in Sources */,

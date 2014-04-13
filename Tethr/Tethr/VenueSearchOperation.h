@@ -15,7 +15,7 @@ typedef void(^VenueRequestCompletion)(NSArray *AllVenues, NSError *error);
  @param requestCompletion   The block that will be called when the request is complete.
  @return A `VenueSearchOperation` pointer. `nil` if error.
  */
-- (id)initWithCompletion:(VenueRequestCompletion)requestCompletion;
+- (id)initWithActivity:(NSString *) activityDescription Completion:(VenueRequestCompletion)requestCompletion;
 
 /// The Venue details to be updated upon receiving information from the FourSquare! servers.
 @property (nonatomic, strong) NSMutableArray *AllVenues;
