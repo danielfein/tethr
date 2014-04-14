@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		268E482918FC871D0037C8D4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268E482818FC871D0037C8D4 /* FacebookSDK.framework */; };
+		268E483118FC88F30037C8D4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E483018FC88F30037C8D4 /* RootViewController.m */; };
 		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
 		2693AD7018FAD8DE006B7C89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD6F18FAD8DE006B7C89 /* MapKit.framework */; };
 		2693AD7218FADD2B006B7C89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD7118FADD2B006B7C89 /* CoreLocation.framework */; };
@@ -65,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		268E482818FC871D0037C8D4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		268E482F18FC88F30037C8D4 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		268E483018FC88F30037C8D4 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2693AD6C18FAD84C006B7C89 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		2693AD6D18FAD84C006B7C89 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		2693AD6F18FAD8DE006B7C89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -237,6 +240,8 @@
 				AD25892818F0A11300510D9D /* Activity.m */,
 				AD25890118F0991C00510D9D /* ViewController.h */,
 				AD25890218F0991C00510D9D /* ViewController.m */,
+				268E482F18FC88F30037C8D4 /* RootViewController.h */,
+				268E483018FC88F30037C8D4 /* RootViewController.m */,
 				AD25890418F0991C00510D9D /* Images.xcassets */,
 				AD2588F318F0991C00510D9D /* Supporting Files */,
 			);
@@ -421,6 +426,7 @@
 				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
 				AD25896818F1AF2F00510D9D /* SDWebImagePrefetcher.m in Sources */,
 				AD25896718F1AF2F00510D9D /* SDWebImageManager.m in Sources */,
+				268E483118FC88F30037C8D4 /* RootViewController.m in Sources */,
 				2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */,
 				AD25890318F0991C00510D9D /* ViewController.m in Sources */,
 				ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */,
