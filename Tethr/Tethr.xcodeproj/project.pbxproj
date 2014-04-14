@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		268E482918FC871D0037C8D4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268E482818FC871D0037C8D4 /* FacebookSDK.framework */; };
 		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
 		2693AD7018FAD8DE006B7C89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD6F18FAD8DE006B7C89 /* MapKit.framework */; };
 		2693AD7218FADD2B006B7C89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD7118FADD2B006B7C89 /* CoreLocation.framework */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		268E482818FC871D0037C8D4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2693AD6C18FAD84C006B7C89 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		2693AD6D18FAD84C006B7C89 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		2693AD6F18FAD8DE006B7C89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -151,6 +153,7 @@
 				AD2588EF18F0991C00510D9D /* CoreGraphics.framework in Frameworks */,
 				AD2588F118F0991C00510D9D /* UIKit.framework in Frameworks */,
 				AD2588ED18F0991C00510D9D /* Foundation.framework in Frameworks */,
+				268E482918FC871D0037C8D4 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +193,7 @@
 		AD2588EB18F0991C00510D9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				268E482818FC871D0037C8D4 /* FacebookSDK.framework */,
 				2693AD7118FADD2B006B7C89 /* CoreLocation.framework */,
 				2693AD6F18FAD8DE006B7C89 /* MapKit.framework */,
 				AD25893618F19E6000510D9D /* MobileCoreServices.framework */,
@@ -563,6 +567,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FOURSQUARE_CLIENT_ID = RTH0D5CBEJ1GIVA12KA5RPEELUEUR0JOMPETL2TUBMDXMZJ5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zeinabkhan/Desktop/tethr/Tethr,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
 				INFOPLIST_FILE = "Tethr/Tethr-Info.plist";
@@ -578,6 +586,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FOURSQUARE_CLIENT_ID = RTH0D5CBEJ1GIVA12KA5RPEELUEUR0JOMPETL2TUBMDXMZJ5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zeinabkhan/Desktop/tethr/Tethr,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
 				INFOPLIST_FILE = "Tethr/Tethr-Info.plist";
