@@ -11,6 +11,10 @@
 
 @property (nonatomic, strong) NSArray *allUsers;
 
+@property (nonatomic, strong) NSMutableArray *allFacebookUsers;
+@property(nonatomic, assign) BOOL requestOneComplete;
+@property(nonatomic, assign) BOOL requestTwoComplete;
+
 @end
 
 @implementation UsersTableViewController
@@ -19,15 +23,56 @@
 {
     [super viewDidLoad];
     
-    
+    self.allFacebookUsers=[[NSMutableArray alloc]init];
     
     
     GetUsersOperation *operation = [[GetUsersOperation alloc] initWithActivity:@"activity" andVenue:@"venue" andCompletion:^(NSArray *allUsers,NSError *error)
     {
         self.allUsers = allUsers;
         [self.tableView reloadData];
+        self.requestOneComplete= YES;
+        
+        if(self.requestOneComplete && self.requestTwoComplete){
+            
+            [self markMutualFriends];
+            
+        }
+    
     }];
     [[self venueReportQueue] addOperation:operation];
+  //
+    FBRequest * request= [FBRequest requestForMyFriends];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary *result, NSError *error){
+        if (error){
+            
+            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Connection error" message:error.description delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            
+            [alert show];
+            
+            return;
+            
+        }
+        
+        NSArray *friends= [result objectForKey:@"data"];
+        for (NSDictionary *friend in friends){
+            self.requestTwoComplete= YES;
+            
+            NSLog(@"%@", friends);
+            
+            [self.allFacebookUsers addObject:friend];
+            
+            
+        }
+        
+        if(self.requestOneComplete && self.requestTwoComplete){
+            
+            [self markMutualFriends];
+            
+        }
+        
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,8 +114,38 @@
     cell.textLabel.text = user.name;
     [cell.imageView setImageWithURL:[[NSURL  alloc] initWithString:user.image_url]];
     
+    if(user.isFriend){
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
+    
     return cell;
+
 }
+
+-(void) markMutualFriends{
+    
+    for( User *temp in self.allUsers){
+        for( NSDictionary <FBGraphUser>*fbUsers in self.allFacebookUsers){
+            
+            if ([temp.facebook_id isEqualToString:fbUsers.id] ){
+                
+                temp.isFriend= YES;
+                temp.image_url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?",fbUsers.id];
+            }
+            
+        }
+    }
+    [self.tableView reloadData];
+}
+
+
+
+
+
+
+
+
+
 //
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    
