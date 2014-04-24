@@ -36,8 +36,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>FacebookAppID</key>
-	<string>454373441361668</string>
+	<key>FacebookAppID</key>
+	<string>1412439569028064</string>
 	<key>FacebookDisplayName</key>
 	<string>Tethr</string>
 	<key>CFBundleURLTypes</key>

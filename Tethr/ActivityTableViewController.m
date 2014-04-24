@@ -10,8 +10,6 @@
 
 #import "VenueViewController.h"
 #import "Activity.h"
-#import "BZFoursquare.h"
-#import "BZFoursquareRequest.h"
 
 @interface ActivityTableViewController (){
     NSMutableData *_responseData;

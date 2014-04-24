@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CF702DE1908B8B60031A845 /* TetherIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF702DD1908B8B60031A845 /* TetherIcon.png */; };
 		268E482918FC871D0037C8D4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268E482818FC871D0037C8D4 /* FacebookSDK.framework */; };
 		268E483118FC88F30037C8D4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E483018FC88F30037C8D4 /* RootViewController.m */; };
 		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
@@ -28,8 +29,6 @@
 		AD25891818F0991C00510D9D /* TethrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25891718F0991C00510D9D /* TethrTests.m */; };
 		AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25892518F09B2900510D9D /* ActivityTableViewController.m */; };
 		AD25892918F0A11300510D9D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25892818F0A11300510D9D /* Activity.m */; };
-		AD25893418F19E4500510D9D /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25893118F19E4500510D9D /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AD25893518F19E4500510D9D /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25893318F19E4500510D9D /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AD25893718F19E6000510D9D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD25893618F19E6000510D9D /* MobileCoreServices.framework */; };
 		AD25893C18F1AE7100510D9D /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25893918F1AE7100510D9D /* Venue.m */; };
 		AD25894018F1AEFE00510D9D /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25893F18F1AEFE00510D9D /* VenueViewController.m */; };
@@ -47,7 +46,6 @@
 		AD25896B18F1AF2F00510D9D /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25895B18F1AF2F00510D9D /* UIImage+MultiFormat.m */; };
 		AD25896C18F1AF2F00510D9D /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25895D18F1AF2F00510D9D /* UIImage+WebP.m */; };
 		AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25895F18F1AF2F00510D9D /* UIImageView+WebCache.m */; };
-		AD25897018F1AFAB00510D9D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25896E18F1AFAB00510D9D /* Model.m */; };
 		AD25897318F1B23100510D9D /* VenueSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25897218F1B23100510D9D /* VenueSearchOperation.m */; };
 		AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */; };
 		AD915F4B18FAE9EE00B8B12E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4A18FAE9EE00B8B12E /* User.m */; };
@@ -65,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CF702DD1908B8B60031A845 /* TetherIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TetherIcon.png; sourceTree = "<group>"; };
 		268E482818FC871D0037C8D4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		268E482F18FC88F30037C8D4 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		268E483018FC88F30037C8D4 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -95,10 +94,6 @@
 		AD25892518F09B2900510D9D /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewController.m; path = ../ActivityTableViewController.m; sourceTree = "<group>"; };
 		AD25892718F0A11300510D9D /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		AD25892818F0A11300510D9D /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		AD25893018F19E4500510D9D /* BZFoursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquare.h; sourceTree = "<group>"; };
-		AD25893118F19E4500510D9D /* BZFoursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquare.m; sourceTree = "<group>"; };
-		AD25893218F19E4500510D9D /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
-		AD25893318F19E4500510D9D /* BZFoursquareRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquareRequest.m; sourceTree = "<group>"; };
 		AD25893618F19E6000510D9D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AD25893818F1AE7100510D9D /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		AD25893918F1AE7100510D9D /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
@@ -133,8 +128,6 @@
 		AD25895D18F1AF2F00510D9D /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		AD25895E18F1AF2F00510D9D /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		AD25895F18F1AF2F00510D9D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		AD25896E18F1AFAB00510D9D /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
-		AD25896F18F1AFAB00510D9D /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		AD25897118F1B23100510D9D /* VenueSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueSearchOperation.h; sourceTree = "<group>"; };
 		AD25897218F1B23100510D9D /* VenueSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueSearchOperation.m; sourceTree = "<group>"; };
 		AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUsersOperation.m; sourceTree = "<group>"; };
@@ -173,9 +166,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CF702DA1908B3710031A845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD915F4918FAE9EE00B8B12E /* User.h */,
+				AD915F4A18FAE9EE00B8B12E /* User.m */,
+				AD25893818F1AE7100510D9D /* Venue.h */,
+				AD25893918F1AE7100510D9D /* Venue.m */,
+				AD25892718F0A11300510D9D /* Activity.h */,
+				AD25892818F0A11300510D9D /* Activity.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0CF702DB1908B38D0031A845 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */,
+				ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */,
+				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
+				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
+				AD25892418F09B2900510D9D /* ActivityTableViewController.h */,
+				AD25892518F09B2900510D9D /* ActivityTableViewController.m */,
+				AD25897118F1B23100510D9D /* VenueSearchOperation.h */,
+				AD25897218F1B23100510D9D /* VenueSearchOperation.m */,
+				AD25893E18F1AEFE00510D9D /* VenueViewController.h */,
+				AD25893F18F1AEFE00510D9D /* VenueViewController.m */,
+				2693AD6C18FAD84C006B7C89 /* MapViewController.h */,
+				2693AD6D18FAD84C006B7C89 /* MapViewController.m */,
+				AD25890118F0991C00510D9D /* ViewController.h */,
+				AD25890218F0991C00510D9D /* ViewController.m */,
+				268E482F18FC88F30037C8D4 /* RootViewController.h */,
+				268E483018FC88F30037C8D4 /* RootViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0CF702DC1908B8B60031A845 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0CF702DD1908B8B60031A845 /* TetherIcon.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AD2588E018F0991C00510D9D = {
 			isa = PBXGroup;
 			children = (
+				0CF702DC1908B8B60031A845 /* Resources */,
 				AD2588F218F0991C00510D9D /* Tethr */,
 				AD25894118F1AF2F00510D9D /* Vendor */,
 				AD25891118F0991C00510D9D /* TethrTests */,
@@ -211,37 +249,11 @@
 		AD2588F218F0991C00510D9D /* Tethr */ = {
 			isa = PBXGroup;
 			children = (
-				AD915F4918FAE9EE00B8B12E /* User.h */,
-				AD915F4A18FAE9EE00B8B12E /* User.m */,
-				ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */,
-				ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */,
-				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
-				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
-				AD25893018F19E4500510D9D /* BZFoursquare.h */,
-				AD25893118F19E4500510D9D /* BZFoursquare.m */,
-				AD25893218F19E4500510D9D /* BZFoursquareRequest.h */,
-				AD25893318F19E4500510D9D /* BZFoursquareRequest.m */,
-				AD25892418F09B2900510D9D /* ActivityTableViewController.h */,
-				AD25892518F09B2900510D9D /* ActivityTableViewController.m */,
-				AD25896E18F1AFAB00510D9D /* Model.m */,
-				AD25896F18F1AFAB00510D9D /* Model.h */,
-				AD25893818F1AE7100510D9D /* Venue.h */,
-				AD25893918F1AE7100510D9D /* Venue.m */,
-				AD25897118F1B23100510D9D /* VenueSearchOperation.h */,
-				AD25897218F1B23100510D9D /* VenueSearchOperation.m */,
-				AD25893E18F1AEFE00510D9D /* VenueViewController.h */,
-				AD25893F18F1AEFE00510D9D /* VenueViewController.m */,
+				0CF702DA1908B3710031A845 /* Model */,
+				0CF702DB1908B38D0031A845 /* ViewControllers */,
 				AD2588FB18F0991C00510D9D /* AppDelegate.h */,
 				AD2588FC18F0991C00510D9D /* AppDelegate.m */,
 				AD2588FE18F0991C00510D9D /* Main.storyboard */,
-				2693AD6C18FAD84C006B7C89 /* MapViewController.h */,
-				2693AD6D18FAD84C006B7C89 /* MapViewController.m */,
-				AD25892718F0A11300510D9D /* Activity.h */,
-				AD25892818F0A11300510D9D /* Activity.m */,
-				AD25890118F0991C00510D9D /* ViewController.h */,
-				AD25890218F0991C00510D9D /* ViewController.m */,
-				268E482F18FC88F30037C8D4 /* RootViewController.h */,
-				268E483018FC88F30037C8D4 /* RootViewController.m */,
 				AD25890418F0991C00510D9D /* Images.xcassets */,
 				AD2588F318F0991C00510D9D /* Supporting Files */,
 			);
@@ -399,6 +411,7 @@
 			files = (
 				AD25890518F0991C00510D9D /* Images.xcassets in Resources */,
 				AD2588F718F0991C00510D9D /* InfoPlist.strings in Resources */,
+				0CF702DE1908B8B60031A845 /* TetherIcon.png in Resources */,
 				AD25890018F0991C00510D9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,8 +445,6 @@
 				ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */,
 				AD2588FD18F0991C00510D9D /* AppDelegate.m in Sources */,
 				AD25896318F1AF2F00510D9D /* SDWebImageCompat.m in Sources */,
-				AD25897018F1AFAB00510D9D /* Model.m in Sources */,
-				AD25893418F19E4500510D9D /* BZFoursquare.m in Sources */,
 				AD25896418F1AF2F00510D9D /* SDWebImageDecoder.m in Sources */,
 				AD25896B18F1AF2F00510D9D /* UIImage+MultiFormat.m in Sources */,
 				AD25896C18F1AF2F00510D9D /* UIImage+WebP.m in Sources */,
@@ -442,7 +453,6 @@
 				AD25896A18F1AF2F00510D9D /* UIImage+GIF.m in Sources */,
 				AD25893C18F1AE7100510D9D /* Venue.m in Sources */,
 				AD25896118F1AF2F00510D9D /* NSData+GIF.m in Sources */,
-				AD25893518F19E4500510D9D /* BZFoursquareRequest.m in Sources */,
 				AD2588F918F0991C00510D9D /* main.m in Sources */,
 				AD915F4B18FAE9EE00B8B12E /* User.m in Sources */,
 				AD25896218F1AF2F00510D9D /* SDImageCache.m in Sources */,
@@ -575,7 +585,7 @@
 				FOURSQUARE_CLIENT_ID = RTH0D5CBEJ1GIVA12KA5RPEELUEUR0JOMPETL2TUBMDXMZJ5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/zeinabkhan/Desktop/tethr/Tethr,
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";
@@ -594,7 +604,7 @@
 				FOURSQUARE_CLIENT_ID = RTH0D5CBEJ1GIVA12KA5RPEELUEUR0JOMPETL2TUBMDXMZJ5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/zeinabkhan/Desktop/tethr/Tethr,
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tethr/Tethr-Prefix.pch";

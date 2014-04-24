@@ -3,7 +3,6 @@
 #import "UsersTableViewController.h"
 #import "User.h"
 #import "GetUsersOperation.h"
-#import "Model.h"
 #import "UIImageView+WebCache.h"
 #import "MapViewController.h"
 

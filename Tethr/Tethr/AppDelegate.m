@@ -7,14 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "Model.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    [[Model sharedManager] load];
     
     // Load the FBProfilePictureView
     // You can find more information about why you need to add this line of code in our troubleshooting guide

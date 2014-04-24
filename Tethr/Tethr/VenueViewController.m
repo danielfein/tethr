@@ -3,13 +3,12 @@
 #import "VenueViewController.h"
 #import "Venue.h"
 #import "VenueSearchOperation.h"
-#import "Model.h"
 #import "UIImageView+WebCache.h"
 #import "MapViewController.h"
 
 @interface VenueViewController ()
 
-@property (nonatomic, strong) Model *model;
+@property (nonatomic, strong) NSArray *venues;
 
 @end
 
@@ -18,14 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.model = [Model sharedManager];
-    
-    
     
     VenueSearchOperation *operation = [[VenueSearchOperation alloc] initWithActivity:self.activity.name Completion:^(NSArray *allVenues,NSError *error){
         
-        self.model.venues = [allVenues mutableCopy];
+        self.venues = [allVenues mutableCopy];
         [self.tableView reloadData];
     }];
     [[self venueReportQueue] addOperation:operation];
@@ -58,14 +53,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.model.venues count];
+    return [self.venues count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     
-    Venue *venue = self.model.venues[indexPath.row];
+    Venue *venue = self.venues[indexPath.row];
 
     cell.textLabel.text = venue.venueName;
     [cell.imageView setImageWithURL:venue.imageURL];
@@ -75,7 +70,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-     Venue *venue = self.model.venues[indexPath.row];
+     Venue *venue = self.venues[indexPath.row];
     [self performSegueWithIdentifier:@"toUsers" sender:venue];
     
 }
