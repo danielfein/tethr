@@ -1,6 +1,7 @@
 
 #import "VenueSearchOperation.h"
 #import "Venue.h"
+#import "AppDelegate.h"
 
 static const NSString *c_host_name = @"https://api.foursquare.com/v2/";
 static const NSString *c_client_id = @"XZTV2M5BY32M0VISEBZZA3TIPDMHCLFAKP2OR0WB3AY4AO1P";
@@ -41,8 +42,14 @@ static const NSString *c_version = @"20131016";
     
     self.executing = YES;
     
-    NSString *urlString = [NSString stringWithFormat:@"%@venues/search?ll=40.7,-74&query=%@&client_id=%@&client_secret=%@&v=%@",
-                           c_host_name,self.activity,c_client_id,c_client_secret,c_version];
+    CLLocation *currentLocation = [((AppDelegate*)[[UIApplication sharedApplication] delegate]) currentLocation];
+    
+    if(!currentLocation){
+        currentLocation =[[CLLocation alloc] initWithLatitude:40.729733 longitude:-73.996407];
+    }
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@venues/search?ll=%f,%f&query=%@&client_id=%@&client_secret=%@&v=%@",
+                           c_host_name,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,self.activity,c_client_id,c_client_secret,c_version];
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

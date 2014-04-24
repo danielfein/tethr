@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0CF702DE1908B8B60031A845 /* TetherIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF702DD1908B8B60031A845 /* TetherIcon.png */; };
+		0CF702E21908C8170031A845 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF702E11908C8170031A845 /* MessageViewController.m */; };
 		268E482918FC871D0037C8D4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268E482818FC871D0037C8D4 /* FacebookSDK.framework */; };
 		268E483118FC88F30037C8D4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E483018FC88F30037C8D4 /* RootViewController.m */; };
 		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
@@ -20,7 +21,6 @@
 		AD2588F918F0991C00510D9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2588F818F0991C00510D9D /* main.m */; };
 		AD2588FD18F0991C00510D9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2588FC18F0991C00510D9D /* AppDelegate.m */; };
 		AD25890018F0991C00510D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2588FE18F0991C00510D9D /* Main.storyboard */; };
-		AD25890318F0991C00510D9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25890218F0991C00510D9D /* ViewController.m */; };
 		AD25890518F0991C00510D9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD25890418F0991C00510D9D /* Images.xcassets */; };
 		AD25890C18F0991C00510D9D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD25890B18F0991C00510D9D /* XCTest.framework */; };
 		AD25890D18F0991C00510D9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EC18F0991C00510D9D /* Foundation.framework */; };
@@ -64,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		0CF702DD1908B8B60031A845 /* TetherIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TetherIcon.png; sourceTree = "<group>"; };
+		0CF702E01908C8170031A845 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		0CF702E11908C8170031A845 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		268E482818FC871D0037C8D4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		268E482F18FC88F30037C8D4 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		268E483018FC88F30037C8D4 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -82,8 +84,6 @@
 		AD2588FB18F0991C00510D9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AD2588FC18F0991C00510D9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AD2588FF18F0991C00510D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD25890118F0991C00510D9D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AD25890218F0991C00510D9D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AD25890418F0991C00510D9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD25890A18F0991C00510D9D /* TethrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TethrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD25890B18F0991C00510D9D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -182,20 +182,16 @@
 		0CF702DB1908B38D0031A845 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0CF702E01908C8170031A845 /* MessageViewController.h */,
+				0CF702E11908C8170031A845 /* MessageViewController.m */,
 				ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */,
 				ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */,
-				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
-				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
 				AD25892418F09B2900510D9D /* ActivityTableViewController.h */,
 				AD25892518F09B2900510D9D /* ActivityTableViewController.m */,
-				AD25897118F1B23100510D9D /* VenueSearchOperation.h */,
-				AD25897218F1B23100510D9D /* VenueSearchOperation.m */,
 				AD25893E18F1AEFE00510D9D /* VenueViewController.h */,
 				AD25893F18F1AEFE00510D9D /* VenueViewController.m */,
 				2693AD6C18FAD84C006B7C89 /* MapViewController.h */,
 				2693AD6D18FAD84C006B7C89 /* MapViewController.m */,
-				AD25890118F0991C00510D9D /* ViewController.h */,
-				AD25890218F0991C00510D9D /* ViewController.m */,
 				268E482F18FC88F30037C8D4 /* RootViewController.h */,
 				268E483018FC88F30037C8D4 /* RootViewController.m */,
 			);
@@ -208,6 +204,17 @@
 				0CF702DD1908B8B60031A845 /* TetherIcon.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0CF702DF1908BB0F0031A845 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
+				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
+				AD25897118F1B23100510D9D /* VenueSearchOperation.h */,
+				AD25897218F1B23100510D9D /* VenueSearchOperation.m */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		AD2588E018F0991C00510D9D = {
@@ -249,6 +256,7 @@
 		AD2588F218F0991C00510D9D /* Tethr */ = {
 			isa = PBXGroup;
 			children = (
+				0CF702DF1908BB0F0031A845 /* Operations */,
 				0CF702DA1908B3710031A845 /* Model */,
 				0CF702DB1908B38D0031A845 /* ViewControllers */,
 				AD2588FB18F0991C00510D9D /* AppDelegate.h */,
@@ -437,11 +445,11 @@
 				AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */,
 				AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */,
 				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
+				0CF702E21908C8170031A845 /* MessageViewController.m in Sources */,
 				AD25896818F1AF2F00510D9D /* SDWebImagePrefetcher.m in Sources */,
 				AD25896718F1AF2F00510D9D /* SDWebImageManager.m in Sources */,
 				268E483118FC88F30037C8D4 /* RootViewController.m in Sources */,
 				2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */,
-				AD25890318F0991C00510D9D /* ViewController.m in Sources */,
 				ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */,
 				AD2588FD18F0991C00510D9D /* AppDelegate.m in Sources */,
 				AD25896318F1AF2F00510D9D /* SDWebImageCompat.m in Sources */,

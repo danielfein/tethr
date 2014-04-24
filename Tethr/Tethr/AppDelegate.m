@@ -10,6 +10,8 @@
 
 @implementation AppDelegate
 
+@synthesize locationManager = locationManager;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -18,9 +20,24 @@
     // https://developers.facebook.com/docs/ios/troubleshooting#objc
     [FBProfilePictureView class];
     
-
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([CLLocationManager locationServicesEnabled]) {
+            locationManager = [[CLLocationManager alloc] init];
+            locationManager.delegate = self;
+            locationManager.distanceFilter = kCLDistanceFilterNone;
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            [locationManager startUpdatingLocation];
+        }
+    });
+    
     return YES;
 }
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.currentLocation = [locations lastObject];
+}
+
+
 
 // In order to process the response you get from interacting with the Facebook login process,
 // you need to override application:openURL:sourceApplication:annotation:

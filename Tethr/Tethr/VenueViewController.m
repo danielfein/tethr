@@ -63,7 +63,11 @@
     Venue *venue = self.venues[indexPath.row];
 
     cell.textLabel.text = venue.venueName;
-    [cell.imageView setImageWithURL:venue.imageURL];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:venue.imageURL];
+    
+    cell.imageView.image = [UIImage imageWithData:imageData];
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
     
     return cell;
 }
@@ -74,8 +78,12 @@
     [self performSegueWithIdentifier:@"toUsers" sender:venue];
     
 }
-//
-//
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    Venue *venue = self.venues[indexPath.row];
+    [self performSegueWithIdentifier:@"goToMapView" sender:venue];
+}
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     UIViewController *vc= [segue destinationViewController];
@@ -86,9 +94,12 @@
         ((MapViewController*)vc).longitude= selectedVenue.longitude;
 
     }else{
-        /*
-         Continue from here, sending venue and activity
-         */
+        
+        Activity *selectedActivity = self.activity;
+        Venue *selectedVenue = (Venue*)sender;
+        
+        [((UsersTableViewController*)vc) setSelectedActivity:selectedActivity];
+        [((UsersTableViewController*)vc) setSelectedLocation:selectedVenue];
     }
 }
 //

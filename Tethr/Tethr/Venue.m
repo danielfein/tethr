@@ -84,6 +84,11 @@
          self.lat = [[[dictionary objectForKey:@"location"] objectForKey:@"lat"] doubleValue];
          self.longitude = [[[dictionary objectForKey:@"location"] objectForKey:@"lng"] doubleValue];
          self.distance = [[[dictionary objectForKey:@"location"] objectForKey:@"distance"] doubleValue];
+        
+        if([dictionary[@"categories"] count] > 0){
+            NSString *imageURL = [NSString stringWithFormat:@"%@bg_32%@",dictionary[@"categories"][0][@"icon"][@"prefix"],dictionary[@"categories"][0][@"icon"][@"suffix"]];
+            self.imageURL = [[NSURL alloc] initWithString:imageURL];
+        }
     }
     return self;
 

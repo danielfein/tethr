@@ -111,10 +111,31 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sNA-oh-cL1"/>
+                    <connections>
+                        <segue destination="DNN-kE-mRC" kind="modal" modalTransitionStyle="flipHorizontal" id="3G7-Si-S4A"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwC-XC-joO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1265" y="383"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="ekg-lH-uSY">
+            <objects>
+                <viewController id="DNN-kE-mRC" customClass="MessageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xak-Qh-epW"/>
+                        <viewControllerLayoutGuide type="bottom" id="wnb-ro-e3D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OZo-wU-HTN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPu-DY-Q54" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="371"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="mY3-Le-Q7n">

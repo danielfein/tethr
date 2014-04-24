@@ -5,6 +5,7 @@
 #import "GetUsersOperation.h"
 #import "UIImageView+WebCache.h"
 #import "MapViewController.h"
+#import "MessageViewController.h"
 
 @interface UsersTableViewController ()
 
@@ -39,7 +40,7 @@
     
     }];
     [[self venueReportQueue] addOperation:operation];
-  //
+  
     FBRequest * request= [FBRequest requestForMyFriends];
     [request startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary *result, NSError *error){
         if (error){
@@ -137,31 +138,21 @@
     [self.tableView reloadData];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    User *user = self.allUsers[indexPath.row];
+    [self performSegueWithIdentifier:@"showMessageDialog" sender:user];
+}
 
-
-
-
-
-
-
-
-//
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    Venue *venue = self.model.venues[indexPath.row];
-//    [self performSegueWithIdentifier:@"goToMapView" sender:venue];
-//    
-//}
-
-
-//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    
-//    MapViewController *vc= [segue destinationViewController];
-//    Venue *selectedVenue= (Venue*)sender;
-//    vc.latitude= selectedVenue.lat;
-//    vc.longitude= selectedVenue.longitude;
-//    
-//}
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    Activity *selectedActivity = self.selectedActivity;
+    Venue *selectedVenue = self.selectedLocation;
+    
+    MessageViewController *mvc = [segue destinationViewController];
+    
+    [mvc setSelectedActivity:selectedActivity];
+    [mvc setSelectedLocation:selectedVenue];
+    mvc.messageReciever = (User*)sender;
+}
 
 
 

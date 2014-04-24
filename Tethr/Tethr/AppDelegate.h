@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,CLLocationManagerDelegate>{
+}
 
+@property (nonatomic,retain)CLLocationManager *locationManager;
+@property (nonatomic,retain)CLLocation *currentLocation;
 @property (strong, nonatomic) UIWindow *window;
 
 @end
