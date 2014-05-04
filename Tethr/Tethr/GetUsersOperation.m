@@ -102,7 +102,7 @@
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&error];
     
-    NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
+   //NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
     
     for(NSArray *tempDictionary in [userDetails objectForKey:@"users"]){
         User *tempUser = [[User alloc] initWithDictionary:[tempDictionary objectAtIndex:0]];
