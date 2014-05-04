@@ -1,10 +1,15 @@
 
-#import "GetUsersOperation.h"
+#import "SendMessageOperation.h"
 #import "User.h"
-#import "AppDelegate.h"
 
 
-@interface GetUsersOperation () <NSURLConnectionDataDelegate>
+@interface SendMessageOperation () <NSURLConnectionDataDelegate>{
+    NSString *recieverFbID;
+    NSString *senderFbID;
+    NSString *venueDesc;
+    NSString *activityDesc;
+
+}
 
 @property (nonatomic, getter = isFinished)  BOOL finished;
 @property (nonatomic, getter = isExecuting) BOOL executing;
@@ -17,16 +22,17 @@
 
 @end
 
-@implementation GetUsersOperation
+@implementation SendMessageOperation
 
-- (id)initWithActivity:(NSString *)activityDescription andVenue:(NSString *)venueDescription andCompletion:(SendMessageRequestCompletion)requestCompletion
+- (id)initWithActivity: (NSString *) activityDescription andVenue: (NSString *)venueDescription wthRecieverFbID:(NSString*)rFbID andSenderFbID:(NSString*)sFbId;
 {
     self = [super init];
     if (self) {
-        self.AllUsers = [[NSMutableArray alloc] init];
-        self.Activity = activityDescription;
-        self.VenueDescription = venueDescription;
-        self.requestCompletion = requestCompletion;
+        recieverFbID = rFbID;
+        senderFbID = sFbId;
+        venueDesc = venueDescription;
+        activityDesc= activityDescription;
+
     }
     return self;
 }
@@ -41,9 +47,7 @@
     
     self.executing = YES;
     
-    NSString *myFbID = [((AppDelegate*)[UIApplication sharedApplication].delegate) fbID];
-    
-    NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/get_activity/%@/%@/%@",self.Activity,self.VenueDescription,myFbID];
+    NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/send_notification/%@/%@/%@/%@",senderFbID,recieverFbID,activityDesc,venueDesc];
     urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -99,28 +103,8 @@
 {
     NSError *error = nil;
     
-    NSAssert(![NSJSONSerialization isValidJSONObject:self.data], @"%s: Invalid JSON recieved from server", __FUNCTION__);
+
     
-    NSDictionary *userDetails = [NSJSONSerialization JSONObjectWithData:self.data
-                                                                 options:NSJSONReadingMutableContainers
-                                                                   error:&error];
-    
-   //NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
-    
-    for(NSArray *tempDictionary in [userDetails objectForKey:@"users"]){
-        User *tempUser = [[User alloc] initWithDictionary:[tempDictionary objectAtIndex:0]];
-        [self.AllUsers addObject:tempUser];
-    }
-    
-    if (!error)
-    {
-        if (self.requestCompletion)
-        {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.requestCompletion(self.AllUsers, nil);
-            }];
-        }
-    };
     
     self.executing = NO;
     self.finished = YES;
@@ -128,13 +112,6 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    if (self.requestCompletion)
-    {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.requestCompletion(nil, error);
-        }];
-    }
-    
     self.executing = NO;
     self.finished = YES;
 }

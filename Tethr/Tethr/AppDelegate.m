@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UpdateTokenOperation.h"
 
 @implementation AppDelegate
 
@@ -36,9 +37,16 @@
     return YES;
 }
 
+
+
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	NSLog(@"My token is: %@", deviceToken);
+    self.deviceToken = deviceToken.description;
+    self.deviceToken = [self.deviceToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    self.deviceToken = [self.deviceToken stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    self.deviceToken = [self.deviceToken stringByReplacingOccurrencesOfString:@">" withString:@""];
+
+    NSLog(@"My token is: %@", self.deviceToken);
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
@@ -93,6 +101,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"Ntification %@",userInfo);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:userInfo[@"aps"][@"alert"] message:nil delegate:nil cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept",nil];
+    
+    [alert show];
+    
+    
 }
 
 @end

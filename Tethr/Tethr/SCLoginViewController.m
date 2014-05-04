@@ -17,6 +17,7 @@
 #import "SCLoginViewController.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "UpdateTokenOperation.h"
 
 @implementation SCLoginViewController
 
@@ -163,8 +164,44 @@
 //                                                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"LogIn success" message:@"You have been logged In successfully" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 //                                                 [alertView show];
                                                  [self transitionToMainViewController];
+                                                 
+                                                 [self updateTokenToServer];
                                              }
                                          }];
+}
+
+-(void)updateTokenToServer{
+    [FBRequestConnection startForMeWithCompletionHandler:
+     ^(FBRequestConnection *connection, id result, NSError *error)
+     {
+         NSLog(@"facebook result: %@", result);
+    
+         NSString *fbID = [result objectForKey:@"id"];
+         NSString *name = [result objectForKey:@"name"];
+         
+         NSString *deviceToken = [((AppDelegate*)[UIApplication sharedApplication].delegate) deviceToken];
+         
+         [((AppDelegate*)[UIApplication sharedApplication].delegate) setFbID:fbID];
+         
+         UpdateTokenOperation *updateOperation = [[UpdateTokenOperation alloc] initWithDeviceToken:deviceToken andFbID:fbID andName:name];
+         
+         [[self queue] addOperation:updateOperation];
+     }];
+    
+   
+}
+
+- (NSOperationQueue *)queue
+{
+    static NSOperationQueue *queue = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = [[NSOperationQueue alloc] init];
+        queue.maxConcurrentOperationCount = 4;
+        queue.name = [[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".deviceQueue"];
+    });
+    
+    return queue;
 }
 
 - (IBAction)connectWithFacebook:(id)sender {

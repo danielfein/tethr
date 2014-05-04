@@ -1,36 +1,38 @@
+//
+//  UpdateTokenOperation.m
+//  Tethr
+//
+//  Created by Daniel Fein on 5/4/14.
+//  Copyright (c) 2014 Daniel Fein Zeinab Khan. All rights reserved.
+//
 
-#import "GetUsersOperation.h"
-#import "User.h"
-#import "AppDelegate.h"
+#import "UpdateTokenOperation.h"
 
-
-@interface GetUsersOperation () <NSURLConnectionDataDelegate>
-
+@interface UpdateTokenOperation (){
+    NSString *deviceToken;
+    NSString *facebookId;
+    NSString *username;
+}
 @property (nonatomic, getter = isFinished)  BOOL finished;
 @property (nonatomic, getter = isExecuting) BOOL executing;
 
 @property (nonatomic, weak) NSURLConnection *connection;
 @property (nonatomic, strong) NSMutableData *data;
 @property (nonatomic, strong) NSString *parseString;
-@property (nonatomic, retain) NSString *Activity;
-@property (nonatomic, retain) NSString *VenueDescription;
 
 @end
 
-@implementation GetUsersOperation
+@implementation UpdateTokenOperation
 
-- (id)initWithActivity:(NSString *)activityDescription andVenue:(NSString *)venueDescription andCompletion:(SendMessageRequestCompletion)requestCompletion
-{
+-(id)initWithDeviceToken:(NSString*)token andFbID:(NSString*)fbID andName:(NSString *)name{
     self = [super init];
     if (self) {
-        self.AllUsers = [[NSMutableArray alloc] init];
-        self.Activity = activityDescription;
-        self.VenueDescription = venueDescription;
-        self.requestCompletion = requestCompletion;
+        deviceToken = token;
+        facebookId = fbID;
+        username = name;
     }
     return self;
 }
-
 - (void)start
 {
     if ([self isCancelled])
@@ -41,9 +43,7 @@
     
     self.executing = YES;
     
-    NSString *myFbID = [((AppDelegate*)[UIApplication sharedApplication].delegate) fbID];
-    
-    NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/get_activity/%@/%@/%@",self.Activity,self.VenueDescription,myFbID];
+    NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/update_token/%@/%@/%@",facebookId,deviceToken,username];
     urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -102,38 +102,19 @@
     NSAssert(![NSJSONSerialization isValidJSONObject:self.data], @"%s: Invalid JSON recieved from server", __FUNCTION__);
     
     NSDictionary *userDetails = [NSJSONSerialization JSONObjectWithData:self.data
-                                                                 options:NSJSONReadingMutableContainers
-                                                                   error:&error];
+                                                                options:NSJSONReadingMutableContainers
+                                                                  error:&error];
     
-   //NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
     
-    for(NSArray *tempDictionary in [userDetails objectForKey:@"users"]){
-        User *tempUser = [[User alloc] initWithDictionary:[tempDictionary objectAtIndex:0]];
-        [self.AllUsers addObject:tempUser];
-    }
-    
-    if (!error)
-    {
-        if (self.requestCompletion)
-        {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.requestCompletion(self.AllUsers, nil);
-            }];
-        }
-    };
-    
+
     self.executing = NO;
     self.finished = YES;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    if (self.requestCompletion)
-    {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.requestCompletion(nil, error);
-        }];
-    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed to register device" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
     
     self.executing = NO;
     self.finished = YES;

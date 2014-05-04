@@ -57,6 +57,8 @@
 		AD25896C18F1AF2F00510D9D /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25895D18F1AF2F00510D9D /* UIImage+WebP.m */; };
 		AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25895F18F1AF2F00510D9D /* UIImageView+WebCache.m */; };
 		AD25897318F1B23100510D9D /* VenueSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD25897218F1B23100510D9D /* VenueSearchOperation.m */; };
+		AD7E275C1916CF1F0057905E /* SendMessageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7E275A1916CF1F0057905E /* SendMessageOperation.m */; };
+		AD7E275F1916D1A20057905E /* UpdateTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7E275E1916D1A20057905E /* UpdateTokenOperation.m */; };
 		AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */; };
 		AD915F4B18FAE9EE00B8B12E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4A18FAE9EE00B8B12E /* User.m */; };
 		ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */; };
@@ -151,6 +153,10 @@
 		AD25895F18F1AF2F00510D9D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		AD25897118F1B23100510D9D /* VenueSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueSearchOperation.h; sourceTree = "<group>"; };
 		AD25897218F1B23100510D9D /* VenueSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueSearchOperation.m; sourceTree = "<group>"; };
+		AD7E275A1916CF1F0057905E /* SendMessageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageOperation.m; sourceTree = "<group>"; };
+		AD7E275B1916CF1F0057905E /* SendMessageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageOperation.h; sourceTree = "<group>"; };
+		AD7E275D1916D1A20057905E /* UpdateTokenOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateTokenOperation.h; sourceTree = "<group>"; };
+		AD7E275E1916D1A20057905E /* UpdateTokenOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateTokenOperation.m; sourceTree = "<group>"; };
 		AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUsersOperation.m; sourceTree = "<group>"; };
 		AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUsersOperation.h; sourceTree = "<group>"; };
 		AD915F4918FAE9EE00B8B12E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -241,6 +247,10 @@
 		0CF702DF1908BB0F0031A845 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				AD7E275D1916D1A20057905E /* UpdateTokenOperation.h */,
+				AD7E275E1916D1A20057905E /* UpdateTokenOperation.m */,
+				AD7E275B1916CF1F0057905E /* SendMessageOperation.h */,
+				AD7E275A1916CF1F0057905E /* SendMessageOperation.m */,
 				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
 				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
 				AD25897118F1B23100510D9D /* VenueSearchOperation.h */,
@@ -500,6 +510,8 @@
 				AD25896318F1AF2F00510D9D /* SDWebImageCompat.m in Sources */,
 				AD25896418F1AF2F00510D9D /* SDWebImageDecoder.m in Sources */,
 				AD25896B18F1AF2F00510D9D /* UIImage+MultiFormat.m in Sources */,
+				AD7E275C1916CF1F0057905E /* SendMessageOperation.m in Sources */,
+				AD7E275F1916D1A20057905E /* UpdateTokenOperation.m in Sources */,
 				AD25896C18F1AF2F00510D9D /* UIImage+WebP.m in Sources */,
 				AD25896618F1AF2F00510D9D /* SDWebImageDownloaderOperation.m in Sources */,
 				AD25896518F1AF2F00510D9D /* SDWebImageDownloader.m in Sources */,

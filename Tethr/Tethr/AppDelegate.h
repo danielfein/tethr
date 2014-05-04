@@ -14,5 +14,7 @@
 @property (nonatomic,retain)CLLocationManager *locationManager;
 @property (nonatomic,retain)CLLocation *currentLocation;
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,copy)NSString *deviceToken;
+@property (nonatomic,copy)NSString *fbID;
 
 @end

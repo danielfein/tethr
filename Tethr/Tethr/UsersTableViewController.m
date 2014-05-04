@@ -6,6 +6,8 @@
 #import "UIImageView+WebCache.h"
 #import "MapViewController.h"
 #import "MessageViewController.h"
+#import "AppDelegate.h"
+#import "SendMessageOperation.h"
 
 @interface UsersTableViewController ()
 
@@ -14,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *allFacebookUsers;
 @property(nonatomic, assign) BOOL requestOneComplete;
 @property(nonatomic, assign) BOOL requestTwoComplete;
+@property (nonatomic,retain)User *selectedUser;
 
 @end
 
@@ -135,18 +138,41 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     User *user = self.allUsers[indexPath.row];
-    
+    self.selectedUser = user;
     Activity *selectedActivity = self.selectedActivity;
     Venue *selectedVenue = self.selectedLocation;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Invite user %@ to join %@ at %@",user.name,selectedActivity.name,selectedVenue.venueName] message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send",nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    //alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
    // [self performSegueWithIdentifier:@"showMessageDialog" sender:user];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+    //NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+    
+
+    Activity *selectedActivity = self.selectedActivity;
+    Venue *selectedVenue = self.selectedLocation;
+
+    NSString *myUSerID = [((AppDelegate*)[UIApplication sharedApplication].delegate) fbID];
+    if (buttonIndex == 1){ // send
+        SendMessageOperation *messageOperation = [[SendMessageOperation alloc] initWithActivity:selectedActivity.name andVenue:selectedVenue.venueName wthRecieverFbID:self.selectedUser.facebook_id andSenderFbID:myUSerID];
+        [[self queue] addOperation:messageOperation];
+    }
+}
+
+- (NSOperationQueue *)queue
+{
+    static NSOperationQueue *queue = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = [[NSOperationQueue alloc] init];
+        queue.maxConcurrentOperationCount = 4;
+        queue.name = [[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".usersQueue"];
+    });
+    
+    return queue;
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

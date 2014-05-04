@@ -3,13 +3,13 @@
 
 @class Venue;
 
-typedef void(^UserRequestCompletion)(NSArray *AllUsers, NSError *error);
+typedef void(^SendMessageRequestCompletion)(NSArray *AllUsers, NSError *error);
 
 @interface GetUsersOperation : NSOperation
 
-- (id)initWithActivity: (NSString *) activityDescription andVenue: (NSString *)venueDescription andCompletion: (UserRequestCompletion) requestCompletion;
+- (id)initWithActivity: (NSString *) activityDescription andVenue: (NSString *)venueDescription andCompletion: (SendMessageRequestCompletion) requestCompletion;
 @property (nonatomic, strong) NSMutableArray *AllUsers;
-@property (nonatomic, copy)   UserRequestCompletion requestCompletion;
+@property (nonatomic, copy)   SendMessageRequestCompletion requestCompletion;
 
 
 @end
