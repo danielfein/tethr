@@ -57,7 +57,7 @@
         return -1*(first -second);
     }];
     
-    self.dummyArray = [sortedArray mutableCopy];
+    self.dummyArray = [sortedArray mutableCopy];    
 }
 
 - (void)didReceiveMemoryWarning
