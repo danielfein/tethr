@@ -23,6 +23,7 @@
 		26F8C0BF1916C00B00B59751 /* Tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BB1916C00A00B59751 /* Tennis.png */; };
 		26F8C0C01916C00B00B59751 /* Yoga.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BC1916C00A00B59751 /* Yoga.png */; };
 		26F8C0C21916C53800B59751 /* Drinks.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0C11916C53800B59751 /* Drinks.png */; };
+		26F8C0C41916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0C31916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png */; };
 		AD2588ED18F0991C00510D9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EC18F0991C00510D9D /* Foundation.framework */; };
 		AD2588EF18F0991C00510D9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EE18F0991C00510D9D /* CoreGraphics.framework */; };
 		AD2588F118F0991C00510D9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588F018F0991C00510D9D /* UIKit.framework */; };
@@ -92,6 +93,7 @@
 		26F8C0BB1916C00A00B59751 /* Tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tennis.png; sourceTree = "<group>"; };
 		26F8C0BC1916C00A00B59751 /* Yoga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yoga.png; sourceTree = "<group>"; };
 		26F8C0C11916C53800B59751 /* Drinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drinks.png; sourceTree = "<group>"; };
+		26F8C0C31916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png"; sourceTree = "<group>"; };
 		AD2588E918F0991C00510D9D /* Tethr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tethr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2588EC18F0991C00510D9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD2588EE18F0991C00510D9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 		0CF702DC1908B8B60031A845 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				26F8C0C31916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png */,
 				26F8C0C11916C53800B59751 /* Drinks.png */,
 				26F8C0B91916C00A00B59751 /* Basketball.png */,
 				26F8C0BA1916C00A00B59751 /* Museum.png */,
@@ -456,6 +459,7 @@
 				26F8C0BD1916C00B00B59751 /* Basketball.png in Resources */,
 				26F8C0C21916C53800B59751 /* Drinks.png in Resources */,
 				26F8C0C01916C00B00B59751 /* Yoga.png in Resources */,
+				26F8C0C41916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png in Resources */,
 				26F8C0BF1916C00B00B59751 /* Tennis.png in Resources */,
 				AD25890018F0991C00510D9D /* Main.storyboard in Resources */,
 			);
