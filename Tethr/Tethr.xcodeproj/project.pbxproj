@@ -14,6 +14,16 @@
 		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
 		2693AD7018FAD8DE006B7C89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD6F18FAD8DE006B7C89 /* MapKit.framework */; };
 		2693AD7218FADD2B006B7C89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693AD7118FADD2B006B7C89 /* CoreLocation.framework */; };
+		26F8C0B11916B16500B59751 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F8C0AF1916B16500B59751 /* SCLoginViewController.m */; };
+		26F8C0B41916B45F00B59751 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B31916B45F00B59751 /* facebook.png */; };
+		26F8C0B61916B49000B59751 /* fblogin1.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B51916B49000B59751 /* fblogin1.png */; };
+		26F8C0B81916BBC800B59751 /* green-terry-cloth-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B71916BBC800B59751 /* green-terry-cloth-texture.png */; };
+		26F8C0BD1916C00B00B59751 /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B91916C00A00B59751 /* Basketball.png */; };
+		26F8C0BE1916C00B00B59751 /* Museum.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BA1916C00A00B59751 /* Museum.png */; };
+		26F8C0BF1916C00B00B59751 /* Tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BB1916C00A00B59751 /* Tennis.png */; };
+		26F8C0C01916C00B00B59751 /* Yoga.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BC1916C00A00B59751 /* Yoga.png */; };
+		26F8C0C21916C53800B59751 /* Drinks.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0C11916C53800B59751 /* Drinks.png */; };
+		26F8C0C41916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0C31916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png */; };
 		AD2588ED18F0991C00510D9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EC18F0991C00510D9D /* Foundation.framework */; };
 		AD2588EF18F0991C00510D9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588EE18F0991C00510D9D /* CoreGraphics.framework */; };
 		AD2588F118F0991C00510D9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2588F018F0991C00510D9D /* UIKit.framework */; };
@@ -73,6 +83,17 @@
 		2693AD6D18FAD84C006B7C89 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		2693AD6F18FAD8DE006B7C89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2693AD7118FADD2B006B7C89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		26F8C0AE1916B16500B59751 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
+		26F8C0AF1916B16500B59751 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
+		26F8C0B31916B45F00B59751 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		26F8C0B51916B49000B59751 /* fblogin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fblogin1.png; sourceTree = "<group>"; };
+		26F8C0B71916BBC800B59751 /* green-terry-cloth-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-terry-cloth-texture.png"; sourceTree = "<group>"; };
+		26F8C0B91916C00A00B59751 /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
+		26F8C0BA1916C00A00B59751 /* Museum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Museum.png; sourceTree = "<group>"; };
+		26F8C0BB1916C00A00B59751 /* Tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tennis.png; sourceTree = "<group>"; };
+		26F8C0BC1916C00A00B59751 /* Yoga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yoga.png; sourceTree = "<group>"; };
+		26F8C0C11916C53800B59751 /* Drinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drinks.png; sourceTree = "<group>"; };
+		26F8C0C31916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png"; sourceTree = "<group>"; };
 		AD2588E918F0991C00510D9D /* Tethr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tethr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2588EC18F0991C00510D9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD2588EE18F0991C00510D9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,6 +203,8 @@
 		0CF702DB1908B38D0031A845 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				26F8C0AE1916B16500B59751 /* SCLoginViewController.h */,
+				26F8C0AF1916B16500B59751 /* SCLoginViewController.m */,
 				0CF702E01908C8170031A845 /* MessageViewController.h */,
 				0CF702E11908C8170031A845 /* MessageViewController.m */,
 				ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */,
@@ -201,6 +224,15 @@
 		0CF702DC1908B8B60031A845 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				26F8C0C31916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png */,
+				26F8C0C11916C53800B59751 /* Drinks.png */,
+				26F8C0B91916C00A00B59751 /* Basketball.png */,
+				26F8C0BA1916C00A00B59751 /* Museum.png */,
+				26F8C0BB1916C00A00B59751 /* Tennis.png */,
+				26F8C0BC1916C00A00B59751 /* Yoga.png */,
+				26F8C0B71916BBC800B59751 /* green-terry-cloth-texture.png */,
+				26F8C0B51916B49000B59751 /* fblogin1.png */,
+				26F8C0B31916B45F00B59751 /* facebook.png */,
 				0CF702DD1908B8B60031A845 /* TetherIcon.png */,
 			);
 			path = Resources;
@@ -420,9 +452,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F8C0BE1916C00B00B59751 /* Museum.png in Resources */,
 				AD25890518F0991C00510D9D /* Images.xcassets in Resources */,
 				AD2588F718F0991C00510D9D /* InfoPlist.strings in Resources */,
+				26F8C0B41916B45F00B59751 /* facebook.png in Resources */,
+				26F8C0B61916B49000B59751 /* fblogin1.png in Resources */,
+				26F8C0B81916BBC800B59751 /* green-terry-cloth-texture.png in Resources */,
 				0CF702DE1908B8B60031A845 /* TetherIcon.png in Resources */,
+				26F8C0BD1916C00B00B59751 /* Basketball.png in Resources */,
+				26F8C0C21916C53800B59751 /* Drinks.png in Resources */,
+				26F8C0C01916C00B00B59751 /* Yoga.png in Resources */,
+				26F8C0C41916CB3F00B59751 /* iOS Simulator Screen shot May 4, 2014, 3.16.39 PM.png in Resources */,
+				26F8C0BF1916C00B00B59751 /* Tennis.png in Resources */,
 				AD25890018F0991C00510D9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +487,7 @@
 				AD25897318F1B23100510D9D /* VenueSearchOperation.m in Sources */,
 				AD25896018F1AF2F00510D9D /* MKAnnotationView+WebCache.m in Sources */,
 				AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */,
+				26F8C0B11916B16500B59751 /* SCLoginViewController.m in Sources */,
 				AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */,
 				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
 				0CF702E21908C8170031A845 /* MessageViewController.m in Sources */,

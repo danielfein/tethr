@@ -13,9 +13,9 @@
     
     [super viewDidAppear:animated];
 
-    if(![FBSession activeSession].isOpen){
-        [self openSessionWithAllowLoginUI:YES];
-    }
+//    if(![FBSession activeSession].isOpen){
+//        [self openSessionWithAllowLoginUI:NO];
+//    }
 }
 
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI

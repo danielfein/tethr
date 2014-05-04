@@ -56,8 +56,12 @@
         NSInteger second = [(Activity * ) b count];
         return -1*(first -second);
     }];
-    
     self.dummyArray = [sortedArray mutableCopy];
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    //d2ffb9
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:0.82 green:1 blue:0.72 alpha:1]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,15 +84,31 @@
     return self.dummyArray.count;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"activityCell" forIndexPath:indexPath];
     
     Activity *temp = [self.dummyArray objectAtIndex:indexPath.row];
-        cell.textLabel.text = temp.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Users", temp.count];
-
+    cell.textLabel.text = temp.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Users", temp.count];
+    
+    UILabel *textLabel = [[UILabel alloc] init];
+    [textLabel setFrame:CGRectMake(cell.textLabel.frame.origin.x + 120,cell.textLabel.frame.origin.y + 40, 100, 70)];
+    if(temp.count == 1){
+        [textLabel setText:[NSString stringWithFormat:@"%d User", temp.count]];
+    }else{
+        [textLabel setText:[NSString stringWithFormat:@"%d Users", temp.count]];
+    }
+    [textLabel setTextColor:[UIColor whiteColor]];
+    [textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+    [cell.contentView addSubview:textLabel];
+    
+   [cell setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:temp.name]]];
+   // cell.layer.contents = (id)[UIImage imageNamed:temp.name].CGImage;
     
     return cell;
 }
