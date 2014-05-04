@@ -104,12 +104,19 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    NSLog(@"Ntification %@",userInfo);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:userInfo[@"aps"][@"alert"] message:nil delegate:nil cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept",nil];
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:userInfo[@"aps"][@"alert"] message:nil delegate:nil cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept",nil];
     [alert show];
     
     
+}
+
+-(NSString*)deviceToken{
+    if(!_deviceToken){
+        return @"6337406414343423423";
+    }else{
+        return _deviceToken;
+    }
 }
 
 @end
