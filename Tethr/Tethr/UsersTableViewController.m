@@ -56,18 +56,11 @@
         NSArray *friends= [result objectForKey:@"data"];
         for (NSDictionary *friend in friends){
             self.requestTwoComplete= YES;
-            
-            NSLog(@"%@", friends);
-            
             [self.allFacebookUsers addObject:friend];
-            
-            
         }
         
         if(self.requestOneComplete && self.requestTwoComplete){
-            
             [self markMutualFriends];
-            
         }
         
     }];
@@ -139,8 +132,20 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     User *user = self.allUsers[indexPath.row];
-    [self performSegueWithIdentifier:@"showMessageDialog" sender:user];
+    
+    Activity *selectedActivity = self.selectedActivity;
+    Venue *selectedVenue = self.selectedLocation;
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Invite user %@ to join %@ at %@",user.name,selectedActivity.name,selectedVenue.venueName] message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send",nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+   // [self performSegueWithIdentifier:@"showMessageDialog" sender:user];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"%@", [alertView textFieldAtIndex:0].text);
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

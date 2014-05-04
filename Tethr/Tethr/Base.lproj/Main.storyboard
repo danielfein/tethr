@@ -112,7 +112,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="sNA-oh-cL1"/>
                     <connections>
-                        <segue destination="DNN-kE-mRC" kind="modal" modalTransitionStyle="flipHorizontal" id="3G7-Si-S4A"/>
+                        <segue destination="DNN-kE-mRC" kind="modal" identifier="showMessageDialog" modalTransitionStyle="flipHorizontal" id="3G7-Si-S4A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwC-XC-joO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,6 +130,14 @@
                     <view key="view" contentMode="scaleToFill" id="OZo-wU-HTN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cB-Wx-gIW">
+                                <rect key="frame" x="93" y="258" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

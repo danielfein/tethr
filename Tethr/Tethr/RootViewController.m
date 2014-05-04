@@ -36,5 +36,29 @@
      }
  }];
 }
-    
+
+- (void)facebookSessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen:
+            // handle successful login here
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+            [FBSession.activeSession closeAndClearTokenInformation];
+            
+            if (error) {
+                // handle error here, for example by showing an alert to the user
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not login with Facebook"
+                                                                message:@"Facebook login failed. Please check your Facebook settings on your phone."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            break;
+        default:
+            break;
+    }
+}
+
 @end
