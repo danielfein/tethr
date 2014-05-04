@@ -22,7 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:0.82 green:1 blue:0.72 alpha:1]];
+
     self.allFacebookUsers=[[NSMutableArray alloc]init];
     
     

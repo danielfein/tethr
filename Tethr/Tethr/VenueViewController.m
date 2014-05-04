@@ -17,7 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:0.82 green:1 blue:0.72 alpha:1]];
+
     VenueSearchOperation *operation = [[VenueSearchOperation alloc] initWithActivity:self.activity.name Completion:^(NSArray *allVenues,NSError *error){
         
         self.venues = [allVenues mutableCopy];
