@@ -41,7 +41,8 @@
     self.executing = YES;
     
     NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/get_activity/%@/%@",self.Activity,self.VenueDescription];
-    
+    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

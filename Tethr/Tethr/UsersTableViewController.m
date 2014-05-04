@@ -26,7 +26,7 @@
     self.allFacebookUsers=[[NSMutableArray alloc]init];
     
     
-    GetUsersOperation *operation = [[GetUsersOperation alloc] initWithActivity:@"activity" andVenue:@"venue" andCompletion:^(NSArray *allUsers,NSError *error)
+    GetUsersOperation *operation = [[GetUsersOperation alloc] initWithActivity:self.selectedActivity.name andVenue:self.selectedLocation.venueName andCompletion:^(NSArray *allUsers,NSError *error)
     {
         self.allUsers = allUsers;
         [self.tableView reloadData];
