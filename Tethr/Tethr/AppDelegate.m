@@ -4,14 +4,24 @@
 //
 //  Created by Daniel Fein on 4/5/14.
 //  Copyright (c) 2014 Daniel Fein Zeinab Khan. All rights reserved.
-//
-
-#import "AppDelegate.h"
+//\
 #import "UpdateTokenOperation.h"
+
+
+#import "UsersTableViewController.h"
+#import "User.h"
+#import "GetUsersOperation.h"
+#import "UIImageView+WebCache.h"
+#import "MapViewController.h"
+#import "SendReplyOperation.h"
+#import "AppDelegate.h"
+#import "SendReplyOperation.h"
+#import "GetNotificationMatchOperation.h"
 
 @implementation AppDelegate
 
 @synthesize locationManager = locationManager;
+@synthesize operation = operation;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -104,11 +114,67 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
+    if(userInfo[@"aps"][@"first"] != nil){
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:userInfo[@"aps"][@"alert"] message:nil delegate:nil cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept",nil];
-    [alert show];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+           [alert setDelegate:self];
     
+    GetNotificationMatchOperation *operationTemp = [[GetNotificationMatchOperation alloc] initWithAlert:userInfo[@"aps"][@"alert"]];
     
+    [[self queue] addOperation:operationTemp];
+    NSLog(@"%@", operationTemp);
+       [alert show];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:userInfo[@"aps"][@"alert"] message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+          [alert show];
+        
+    }
+}
+
+
+- (NSOperationQueue *)queue
+{
+    static NSOperationQueue *queue = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = [[NSOperationQueue alloc] init];
+        queue.maxConcurrentOperationCount = 4;
+        queue.name = [[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".deviceQueue"];
+    });
+    
+    return queue;
+}
+- (NSOperationQueue *)replyQueue
+{
+    static NSOperationQueue *queue = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = [[NSOperationQueue alloc] init];
+        queue.maxConcurrentOperationCount = 4;
+        queue.name = [[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".replyQueue"];
+    });
+    
+    return queue;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    // Handle interaction
+    SendReplyOperation *replyOperation;
+    switch (buttonIndex)
+    {
+        case 0:
+            NSLog(@"Reject was pressed");
+            replyOperation = [[SendReplyOperation alloc] initWithRecipient:self.replyRecipientID andSenderFbID:self.replySenderID andMessage:@"" isAccepted:NO];
+            break;
+        case 1:
+            //Why can't I access Alert here?
+            replyOperation = [[SendReplyOperation alloc] initWithRecipient:self.replyRecipientID andSenderFbID:self.replySenderID andMessage:[[alertView textFieldAtIndex:0] text] isAccepted:YES];
+            NSLog(@"Accept was pressed %@",self.operation);
+            break;
+    }
+    [[self replyQueue] addOperation:replyOperation];
+
 }
 
 -(NSString*)deviceToken{

@@ -5,7 +5,6 @@
 #import "GetUsersOperation.h"
 #import "UIImageView+WebCache.h"
 #import "MapViewController.h"
-#import "MessageViewController.h"
 #import "AppDelegate.h"
 #import "SendMessageOperation.h"
 
@@ -178,12 +177,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     Activity *selectedActivity = self.selectedActivity;
     Venue *selectedVenue = self.selectedLocation;
-    
-    MessageViewController *mvc = [segue destinationViewController];
-    
-    [mvc setSelectedActivity:selectedActivity];
-    [mvc setSelectedLocation:selectedVenue];
-    mvc.messageReciever = (User*)sender;
+
 }
 
 

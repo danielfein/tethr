@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0CF702DE1908B8B60031A845 /* TetherIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF702DD1908B8B60031A845 /* TetherIcon.png */; };
-		0CF702E21908C8170031A845 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF702E11908C8170031A845 /* MessageViewController.m */; };
 		268E482918FC871D0037C8D4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268E482818FC871D0037C8D4 /* FacebookSDK.framework */; };
 		268E483118FC88F30037C8D4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E483018FC88F30037C8D4 /* RootViewController.m */; };
 		2693AD6E18FAD84C006B7C89 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693AD6D18FAD84C006B7C89 /* MapViewController.m */; };
@@ -62,6 +61,8 @@
 		AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */; };
 		AD915F4B18FAE9EE00B8B12E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD915F4A18FAE9EE00B8B12E /* User.m */; };
 		ADDB8A6418FAEDFA0096385C /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */; };
+		ADF31A17191BCABA0000E7FA /* SendReplyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF31A16191BCABA0000E7FA /* SendReplyOperation.m */; };
+		ADF31A1A191C14090000E7FA /* GetNotificationMatchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF31A19191C14090000E7FA /* GetNotificationMatchOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +77,6 @@
 
 /* Begin PBXFileReference section */
 		0CF702DD1908B8B60031A845 /* TetherIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TetherIcon.png; sourceTree = "<group>"; };
-		0CF702E01908C8170031A845 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		0CF702E11908C8170031A845 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		268E482818FC871D0037C8D4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		268E482F18FC88F30037C8D4 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		268E483018FC88F30037C8D4 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -163,6 +162,10 @@
 		AD915F4A18FAE9EE00B8B12E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
 		ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
+		ADF31A15191BCABA0000E7FA /* SendReplyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendReplyOperation.h; sourceTree = "<group>"; };
+		ADF31A16191BCABA0000E7FA /* SendReplyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendReplyOperation.m; sourceTree = "<group>"; };
+		ADF31A18191C14090000E7FA /* GetNotificationMatchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetNotificationMatchOperation.h; sourceTree = "<group>"; };
+		ADF31A19191C14090000E7FA /* GetNotificationMatchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetNotificationMatchOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,8 +214,6 @@
 			children = (
 				26F8C0AE1916B16500B59751 /* SCLoginViewController.h */,
 				26F8C0AF1916B16500B59751 /* SCLoginViewController.m */,
-				0CF702E01908C8170031A845 /* MessageViewController.h */,
-				0CF702E11908C8170031A845 /* MessageViewController.m */,
 				ADDB8A6218FAEDFA0096385C /* UsersTableViewController.h */,
 				ADDB8A6318FAEDFA0096385C /* UsersTableViewController.m */,
 				AD25892418F09B2900510D9D /* ActivityTableViewController.h */,
@@ -249,8 +250,12 @@
 			children = (
 				AD7E275D1916D1A20057905E /* UpdateTokenOperation.h */,
 				AD7E275E1916D1A20057905E /* UpdateTokenOperation.m */,
+				ADF31A15191BCABA0000E7FA /* SendReplyOperation.h */,
+				ADF31A16191BCABA0000E7FA /* SendReplyOperation.m */,
 				AD7E275B1916CF1F0057905E /* SendMessageOperation.h */,
 				AD7E275A1916CF1F0057905E /* SendMessageOperation.m */,
+				ADF31A18191C14090000E7FA /* GetNotificationMatchOperation.h */,
+				ADF31A19191C14090000E7FA /* GetNotificationMatchOperation.m */,
 				AD915F4718FAE8E000B8B12E /* GetUsersOperation.h */,
 				AD915F4618FAE8E000B8B12E /* GetUsersOperation.m */,
 				AD25897118F1B23100510D9D /* VenueSearchOperation.h */,
@@ -498,9 +503,9 @@
 				AD25896018F1AF2F00510D9D /* MKAnnotationView+WebCache.m in Sources */,
 				AD915F4818FAE8E000B8B12E /* GetUsersOperation.m in Sources */,
 				26F8C0B11916B16500B59751 /* SCLoginViewController.m in Sources */,
+				ADF31A1A191C14090000E7FA /* GetNotificationMatchOperation.m in Sources */,
 				AD25896D18F1AF2F00510D9D /* UIImageView+WebCache.m in Sources */,
 				AD25892618F09B2900510D9D /* ActivityTableViewController.m in Sources */,
-				0CF702E21908C8170031A845 /* MessageViewController.m in Sources */,
 				AD25896818F1AF2F00510D9D /* SDWebImagePrefetcher.m in Sources */,
 				AD25896718F1AF2F00510D9D /* SDWebImageManager.m in Sources */,
 				268E483118FC88F30037C8D4 /* RootViewController.m in Sources */,
@@ -516,6 +521,7 @@
 				AD25896618F1AF2F00510D9D /* SDWebImageDownloaderOperation.m in Sources */,
 				AD25896518F1AF2F00510D9D /* SDWebImageDownloader.m in Sources */,
 				AD25896A18F1AF2F00510D9D /* UIImage+GIF.m in Sources */,
+				ADF31A17191BCABA0000E7FA /* SendReplyOperation.m in Sources */,
 				AD25893C18F1AE7100510D9D /* Venue.m in Sources */,
 				AD25896118F1AF2F00510D9D /* NSData+GIF.m in Sources */,
 				AD2588F918F0991C00510D9D /* main.m in Sources */,

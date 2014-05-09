@@ -16,5 +16,9 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,copy)NSString *deviceToken;
 @property (nonatomic,copy)NSString *fbID;
+@property (nonatomic, retain) NSOperation *operation;
 
+@property (nonatomic,copy)NSString *replyRecipientID;
+
+@property (nonatomic,copy)NSString *replySenderID;
 @end
