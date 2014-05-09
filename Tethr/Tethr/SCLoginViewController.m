@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+//Zeinab/Dan Comments: This is how we handle login with Facebook (our View Controller)
+
 #import "SCLoginViewController.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"

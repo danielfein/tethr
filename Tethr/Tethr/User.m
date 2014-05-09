@@ -12,10 +12,10 @@
 -(id) initWithDictionary: (NSDictionary *) dictionary{
     self = [super init];
     if (self) {
-        self.userid = [[dictionary objectForKey:@"id"] integerValue];
-        self.name = [dictionary objectForKey:@"name"];
-        self.image_url = [dictionary objectForKey:@"image_url"];
-        self.facebook_id = [dictionary objectForKey:@"facebook_id"];
+        self.userid = [[dictionary objectForKey:@"id"] integerValue]; //The user who is currrently using the app
+        self.name = [dictionary objectForKey:@"name"]; //Name of user after Facebook connect
+        self.image_url = [dictionary objectForKey:@"image_url"]; //Profile picture of user after Facebook Connect
+        self.facebook_id = [dictionary objectForKey:@"facebook_id"]; //Facebook User ID
     }
     return self;
  

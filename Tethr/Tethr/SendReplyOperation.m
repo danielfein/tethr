@@ -3,6 +3,9 @@
 #import "User.h"
 
 
+//Send push notification, taking in criteria of message and whether or not it is an acceptance or rejection
+
+
 @interface SendReplyOperation () <NSURLConnectionDataDelegate>{
     NSString *recieverFbID;
     NSString *senderFbID;
@@ -45,6 +48,7 @@
     
     self.executing = YES;
     NSString *acceptanceCriteria = self.accepted ? @"accept":@"reject";
+    //Send push notification, taking in criteria of message and whether or not it is an acceptance or rejection
     NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/send_message/%@/%@/%@/%@",senderFbID, recieverFbID,acceptanceCriteria,self.message ];
     urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];

@@ -7,6 +7,8 @@
 //\
 #import "UpdateTokenOperation.h"
 
+//This is where we handle the majority of our data transfers from one view controller to another and backward retrieval
+// e.g. view 1 can get info for view 2 and view 2 can get info from view 1
 
 #import "UsersTableViewController.h"
 #import "User.h"
@@ -51,6 +53,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
+    //Get device token so that we can send the user a push notification
     self.deviceToken = deviceToken.description;
     self.deviceToken = [self.deviceToken stringByReplacingOccurrencesOfString:@" " withString:@""];
     self.deviceToken = [self.deviceToken stringByReplacingOccurrencesOfString:@"<" withString:@""];
@@ -132,7 +135,7 @@
     }
 }
 
-
+//First notification (not acceptance nor rejection, but Invitation)
 - (NSOperationQueue *)queue
 {
     static NSOperationQueue *queue = nil;
@@ -145,6 +148,8 @@
     
     return queue;
 }
+
+//For when a user replies. Second Notification
 - (NSOperationQueue *)replyQueue
 {
     static NSOperationQueue *queue = nil;
@@ -158,17 +163,24 @@
     return queue;
 }
 
+//How we handle the interaction when a user receives a notification invitation
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    // Handle interaction
+
     SendReplyOperation *replyOperation;
     switch (buttonIndex)
     {
         case 0:
+            //If user presses Reject (0th index)
             NSLog(@"Reject was pressed");
+            //Send NO so we can tell our API which type of notification to send. "Your invitation to USERNAME has been rejected"
+            //Also send no message andMessage:@""
             replyOperation = [[SendReplyOperation alloc] initWithRecipient:self.replyRecipientID andSenderFbID:self.replySenderID andMessage:@"" isAccepted:NO];
+            
             break;
         case 1:
-            //Why can't I access Alert here?
+            //If user presses Accept (1st index)
+            
+            //Send YES so we can tell our API that it is confirmed and also send the message that was written in the alertView
             replyOperation = [[SendReplyOperation alloc] initWithRecipient:self.replyRecipientID andSenderFbID:self.replySenderID andMessage:[[alertView textFieldAtIndex:0] text] isAccepted:YES];
             NSLog(@"Accept was pressed %@",self.operation);
             break;

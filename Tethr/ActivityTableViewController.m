@@ -2,12 +2,11 @@
 //  ActivityTableViewController.m
 //  Tethr
 //
-//  Created by Daniel Fein on 4/5/14.
+//  Created by Zeinab Khan on 4/5/14.
 //  Copyright (c) 2014 Daniel Fein Zeinab Khan. All rights reserved.
 //
 
 #import "ActivityTableViewController.h"
-
 #import "VenueViewController.h"
 #import "Activity.h"
 
@@ -31,21 +30,7 @@
 {
     [super viewDidLoad];
     self.dummyArray = [[NSMutableArray alloc] init];
-//    Activity *dummyActivity = [[Activity alloc] init];
-//    dummyActivity.name = @"Tennis";
-//    dummyActivity.count = 10;
-//    [self.dummyArray addObject:dummyActivity];
-//    
-//    dummyActivity = [[Activity alloc] init];
-//    dummyActivity.name = @"Museums";
-//    dummyActivity.count = 123;
-//    [self.dummyArray addObject:dummyActivity];
-//    
-//    dummyActivity = [[Activity alloc] init];
-//    dummyActivity.name = @"Dinner";
-//    dummyActivity.count = 7;
-//    [self.dummyArray addObject:dummyActivity];
-    // Create the request.
+    // Create the request to our api call which gets all activities
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://108.166.79.24/tethr/get_all_activities"]];
     
     // Create url connection and fire request
@@ -88,6 +73,7 @@
     return 100;
 }
 
+//Display the results ofr all activities
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"activityCell" forIndexPath:indexPath];
@@ -99,10 +85,12 @@
     UILabel *textLabel = [[UILabel alloc] init];
     [textLabel setFrame:CGRectMake(cell.textLabel.frame.origin.x + 120,cell.textLabel.frame.origin.y + 40, 100, 70)];
     if(temp.count == 1){
-        [textLabel setText:[NSString stringWithFormat:@"%d User", temp.count]];
+        [textLabel setText:[NSString stringWithFormat:@"%d User", temp.count]]; //Say User if there is only one user (for grammatical purposes)
     }else{
-        [textLabel setText:[NSString stringWithFormat:@"%d Users", temp.count]];
+        [textLabel setText:[NSString stringWithFormat:@"%d Users", temp.count]]; //Otherwise say Users for grammatical purposes
     }
+    
+    //Styling/formating
     [textLabel setTextColor:[UIColor whiteColor]];
     [textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     [cell.contentView addSubview:textLabel];
@@ -117,6 +105,7 @@
     [self performSegueWithIdentifier:@"gotoMap" sender:selectedActivity];
 }
 
+//Preparing to send info to other VIew Controllers.
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     VenueViewController *vc = [segue destinationViewController];
     vc.activity = (Activity *) sender;
@@ -144,9 +133,8 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    // The request is complete and data has been received
-    // You can parse the stuff in your instance variable now
-    // NSLog(@"Data is %@", [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding ]);
+    // The request is complete and data has been received, now we handle it and look for activities from our API call to backend.
+    
     NSDictionary *activities = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingAllowFragments error:nil];
 //
     NSArray *allActivities = [activities objectForKey:@"activities"];

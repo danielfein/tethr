@@ -1,3 +1,10 @@
+//
+//  VenueSearchOperation.m
+//  Tethr
+//
+//  Created by Zeinab Khan on 5/4/14.
+//  Copyright (c) 2014 Daniel Fein Zeinab Khan. All rights reserved.
+//
 
 #import "VenueSearchOperation.h"
 #import "Venue.h"
@@ -47,7 +54,7 @@ static const NSString *c_version = @"20131016";
     if(!currentLocation){
         currentLocation =[[CLLocation alloc] initWithLatitude:40.729733 longitude:-73.996407];
     }
-    
+    //This is where we construct the FourSquare API call. We send a current location (if no current location we must send hardcoded data.
     NSString *urlString = [NSString stringWithFormat:@"%@venues/search?ll=%f,%f&query=%@&client_id=%@&client_secret=%@&v=%@",
                            c_host_name,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,self.activity,c_client_id,c_client_secret,c_version];
     
@@ -112,8 +119,10 @@ static const NSString *c_version = @"20131016";
     
     NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
     
+    //Create a dictionary of all venues for activity that was clicked and searched
     for(NSDictionary *tempDictionary in venueDetails){
         Venue *tempVenue = [[Venue alloc] initWithDictioanry:tempDictionary];
+        //Add the venue to the property of AllVenues
         [self.AllVenues addObject:tempVenue];
     }
     

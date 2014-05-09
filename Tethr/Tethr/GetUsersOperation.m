@@ -42,7 +42,7 @@
     self.executing = YES;
     
     NSString *myFbID = [((AppDelegate*)[UIApplication sharedApplication].delegate) fbID];
-    
+    //Executes a call to our backend API based on activity and venue, retrieve all users who match and also adds current user to list of people interested in that activity at that venue
     NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/get_activity/%@/%@/%@",self.Activity,self.VenueDescription,myFbID];
     urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
@@ -105,8 +105,7 @@
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&error];
     
-   //NSAssert(!error, @"%s: Error while parsing JSON", __FUNCTION__);
-    
+//Put all users into a dictionary to be displayed on our view controller.
     for(NSArray *tempDictionary in [userDetails objectForKey:@"users"]){
         User *tempUser = [[User alloc] initWithDictionary:[tempDictionary objectAtIndex:0]];
         [self.AllUsers addObject:tempUser];

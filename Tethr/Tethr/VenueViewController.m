@@ -72,21 +72,24 @@
     
     return cell;
 }
-
+//if user clicks cell go to users list view controller
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
      Venue *venue = self.venues[indexPath.row];
+    //Call function to preparesegue
     [self performSegueWithIdentifier:@"toUsers" sender:venue];
     
 }
 
+//if user clicks icon then go to the map
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     Venue *venue = self.venues[indexPath.row];
+     //Call function to preparesegue
     [self performSegueWithIdentifier:@"goToMapView" sender:venue];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    //Prepare for segue to incoming view controller.
     UIViewController *vc= [segue destinationViewController];
     if([vc isKindOfClass:[MapViewController class]]){
         

@@ -1,7 +1,7 @@
 
 #import "SendMessageOperation.h"
 #import "User.h"
-
+//Sending the initial invitation push notification
 
 @interface SendMessageOperation () <NSURLConnectionDataDelegate>{
     NSString *recieverFbID;
@@ -46,7 +46,7 @@
     }
     
     self.executing = YES;
-    
+    //Send the notification to sender from sender with Activity and Venue. Using this we construct a message on the backend
     NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/send_notification/%@/%@/%@/%@",senderFbID,recieverFbID,activityDesc,venueDesc];
     urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];

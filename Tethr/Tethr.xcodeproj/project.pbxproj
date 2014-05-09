@@ -16,7 +16,6 @@
 		26F8C0B11916B16500B59751 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F8C0AF1916B16500B59751 /* SCLoginViewController.m */; };
 		26F8C0B41916B45F00B59751 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B31916B45F00B59751 /* facebook.png */; };
 		26F8C0B61916B49000B59751 /* fblogin1.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B51916B49000B59751 /* fblogin1.png */; };
-		26F8C0B81916BBC800B59751 /* green-terry-cloth-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B71916BBC800B59751 /* green-terry-cloth-texture.png */; };
 		26F8C0BD1916C00B00B59751 /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0B91916C00A00B59751 /* Basketball.png */; };
 		26F8C0BE1916C00B00B59751 /* Museum.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BA1916C00A00B59751 /* Museum.png */; };
 		26F8C0BF1916C00B00B59751 /* Tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F8C0BB1916C00A00B59751 /* Tennis.png */; };
@@ -88,7 +87,6 @@
 		26F8C0AF1916B16500B59751 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
 		26F8C0B31916B45F00B59751 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		26F8C0B51916B49000B59751 /* fblogin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fblogin1.png; sourceTree = "<group>"; };
-		26F8C0B71916BBC800B59751 /* green-terry-cloth-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-terry-cloth-texture.png"; sourceTree = "<group>"; };
 		26F8C0B91916C00A00B59751 /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
 		26F8C0BA1916C00A00B59751 /* Museum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Museum.png; sourceTree = "<group>"; };
 		26F8C0BB1916C00A00B59751 /* Tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tennis.png; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				26F8C0BA1916C00A00B59751 /* Museum.png */,
 				26F8C0BB1916C00A00B59751 /* Tennis.png */,
 				26F8C0BC1916C00A00B59751 /* Yoga.png */,
-				26F8C0B71916BBC800B59751 /* green-terry-cloth-texture.png */,
 				26F8C0B51916B49000B59751 /* fblogin1.png */,
 				26F8C0B31916B45F00B59751 /* facebook.png */,
 				0CF702DD1908B8B60031A845 /* TetherIcon.png */,
@@ -472,7 +469,6 @@
 				AD2588F718F0991C00510D9D /* InfoPlist.strings in Resources */,
 				26F8C0B41916B45F00B59751 /* facebook.png in Resources */,
 				26F8C0B61916B49000B59751 /* fblogin1.png in Resources */,
-				26F8C0B81916BBC800B59751 /* green-terry-cloth-texture.png in Resources */,
 				0CF702DE1908B8B60031A845 /* TetherIcon.png in Resources */,
 				26F8C0BD1916C00B00B59751 /* Basketball.png in Resources */,
 				26F8C0C21916C53800B59751 /* Drinks.png in Resources */,

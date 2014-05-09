@@ -2,12 +2,12 @@
 //  UpdateTokenOperation.m
 //  Tethr
 //
-//  Created by Daniel Fein on 5/4/14.
+//  Created by Zeinab Khan on 5/4/14.
 //  Copyright (c) 2014 Daniel Fein Zeinab Khan. All rights reserved.
 //
 
 #import "UpdateTokenOperation.h"
-
+//Update token for push notifications
 @interface UpdateTokenOperation (){
     NSString *deviceToken;
     NSString *facebookId;
@@ -42,7 +42,7 @@
     }
     
     self.executing = YES;
-    
+    //This is to update a user's device token - this is for sending notifications
     NSString *urlString = [NSString stringWithFormat:@"http://108.166.79.24/tethr/update_token/%@/%@/%@",facebookId,deviceToken,username];
     urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];

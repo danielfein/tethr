@@ -9,6 +9,7 @@
 #import "Activity.h"
 
 @implementation Activity
+//Making an instance of the selected activity and venue combination, along with the current user's id.
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
