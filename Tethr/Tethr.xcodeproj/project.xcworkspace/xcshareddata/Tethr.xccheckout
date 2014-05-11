@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4405FA2D-F767-4CC1-AC8D-F73974ECAE69</string>
+	<string>C836E10F-1553-48B8-A451-264508978CED</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Tethr</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>96C9A931-B2C8-4614-85C4-B9E52E4E4C6E</key>
-		<string>https://github.com/danielfein/tethr.git</string>
+		<key>AB17B8BE-8298-475E-801F-F095558C90A0</key>
+		<string>https://github.com/danielfein/tethr</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Tethr/Tethr.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>96C9A931-B2C8-4614-85C4-B9E52E4E4C6E</key>
+		<key>AB17B8BE-8298-475E-801F-F095558C90A0</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/danielfein/tethr.git</string>
+	<string>https://github.com/danielfein/tethr</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>96C9A931-B2C8-4614-85C4-B9E52E4E4C6E</string>
+	<string>AB17B8BE-8298-475E-801F-F095558C90A0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>96C9A931-B2C8-4614-85C4-B9E52E4E4C6E</string>
+			<string>AB17B8BE-8298-475E-801F-F095558C90A0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>tethr</string>
 		</dict>
