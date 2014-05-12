@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+//
+//  SCLoginViewController.m
+//  Tethr
+//
+//  Created by Zeinab Khan on 4/5/14.
+//  Copyright (c) 2014 Daniel Fein Zeinab Khan. All rights reserved.
+//
 //Zeinab/Dan Comments: This is how we handle login with Facebook (our View Controller)
 
 #import "SCLoginViewController.h"

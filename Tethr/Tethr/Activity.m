@@ -1,5 +1,5 @@
 //
-//  Activities.m
+//  Activity.m
 //  Tethr
 //
 //  Created by Daniel Fein on 4/5/14.

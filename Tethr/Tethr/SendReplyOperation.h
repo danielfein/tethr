@@ -1,5 +1,5 @@
 //
-//  SendRejectMessageOperation.h
+//  SendReplyOperation.h
 //  Tethr
 //
 //  Created by Daniel Fein on 5/8/14.

@@ -1,5 +1,5 @@
 //
-//  Activities.h
+//  Activity.h
 //  Tethr
 //
 //  Created by Daniel Fein on 4/5/14.
